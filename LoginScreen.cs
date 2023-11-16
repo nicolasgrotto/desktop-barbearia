@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,12 @@ namespace interdisciplinar2
             {
                 txtbName.Clear();
             }
+
+            if (lblInvalidUser.Visible == true)
+                lblInvalidUser.Visible = false;
+
+            if (lblInvalidPassword.Visible == true)
+                lblInvalidPassword.Visible = false;
         }
 
         private void txtbPassword_MouseClick(object sender, MouseEventArgs e)
@@ -55,6 +62,12 @@ namespace interdisciplinar2
                 txtbPassword.Clear();
                 txtbPassword.UseSystemPasswordChar = true;
             }
+
+            if (lblInvalidUser.Visible == true)
+                lblInvalidUser.Visible = false;
+
+            if (lblInvalidPassword.Visible == true)
+                lblInvalidPassword.Visible = false;
         }
 
         private void btnLogin_MouseLeave(object sender, EventArgs e)
@@ -89,6 +102,72 @@ namespace interdisciplinar2
 
             dontShowPasswordImage.Visible = false;
             showPasswordImage.Visible = true;
+        }
+
+        private void SqlInjectionPrevention()
+        {
+            if (txtbName.Text.Contains("'"))
+                txtbPassword.Text = txtbPassword.Text.Replace("'", "");
+
+            if (txtbPassword.Text.Contains("'"))
+                txtbName.Text = txtbName.Text.Replace("'", "");
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=nick1691");
+            try
+            {
+                mysql.Open();
+
+                using (MySqlCommand command = new MySqlCommand("SELECT nome_barbeiro, senha_barbeiro FROM tb_barbeiro", mysql))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string user = reader.GetString("nome_barbeiro");
+
+                            string password = reader.GetString("senha_barbeiro");
+
+                            SqlInjectionPrevention();
+
+                            if (txtbName.Text == user && txtbPassword.Text == password)
+                            {
+                                MessageBox.Show("Login efetuado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                this.Hide();
+                                MainScreen mainScreen = new MainScreen();
+                                mainScreen.Show();
+                            }
+                            else
+                            {
+                                if (txtbName.Text != user)
+                                {
+                                    lblInvalidUser.Visible = true;
+                                }
+
+                                if (txtbPassword.Text != password)
+                                {
+                                    lblInvalidPassword.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (mysql.State == ConnectionState.Open)
+                {
+                    mysql.Close();
+                }
+                mysql.Dispose();
+            }
         }
     }
 }

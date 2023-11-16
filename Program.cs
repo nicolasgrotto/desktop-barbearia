@@ -12,7 +12,7 @@ namespace interdisciplinar2
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
