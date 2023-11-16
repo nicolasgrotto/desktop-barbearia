@@ -41,10 +41,32 @@ namespace interdisciplinar2
             if (progressBar.Value == 100)
             {
                 timer1.Stop();
+                timer2.Stop();
+
                 this.Hide();
 
                 LoginScreen loginScreen = new LoginScreen();
                 loginScreen.Show();
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (label1.Text == "Carregando...")
+            {
+                label1.Text = "Carregando";
+            }
+            else if (label1.Text == "Carregando")
+            {
+                label1.Text = "Carregando.";
+            }
+            else if (label1.Text == "Carregando.")
+            {
+                label1.Text = "Carregando..";
+            }
+            else if (label1.Text == "Carregando..")
+            {
+                label1.Text = "Carregando...";
             }
         }
     }

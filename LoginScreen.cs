@@ -20,6 +20,23 @@ namespace interdisciplinar2
             dontShowPasswordImage.Visible = false;
         }
 
+        private void DefaultNameText()
+        {
+            if (txtbName.Text == "Digite seu Usuário")
+            {
+                txtbName.Clear();
+            }
+        }
+
+        private void DefaultPasswordText()
+        {
+            if (txtbPassword.Text == "Digite a Senha")
+            {
+                txtbPassword.Clear();
+                txtbPassword.UseSystemPasswordChar = true;
+            }
+        }
+
         private void txtbName_TextChanged(object sender, EventArgs e)
         {
             txtbName.ForeColor = Color.White;
@@ -43,10 +60,7 @@ namespace interdisciplinar2
 
         private void txtbName_MouseClick(object sender, MouseEventArgs e)
         {
-            if (txtbName.Text == "Digite seu Usuário")
-            {
-                txtbName.Clear();
-            }
+            DefaultNameText();
 
             if (lblInvalidUser.Visible == true)
                 lblInvalidUser.Visible = false;
@@ -57,11 +71,7 @@ namespace interdisciplinar2
 
         private void txtbPassword_MouseClick(object sender, MouseEventArgs e)
         {
-            if (txtbPassword.Text == "Digite a Senha")
-            {
-                txtbPassword.Clear();
-                txtbPassword.UseSystemPasswordChar = true;
-            }
+            DefaultPasswordText();
 
             if (lblInvalidUser.Visible == true)
                 lblInvalidUser.Visible = false;
@@ -110,7 +120,7 @@ namespace interdisciplinar2
                 txtbPassword.Text = txtbPassword.Text.Replace("'", "");
 
             if (txtbPassword.Text.Contains("'"))
-                txtbName.Text = txtbName.Text.Replace("'", "");
+                txtbPassword.Text = txtbPassword.Text.Replace("'", "");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -145,11 +155,15 @@ namespace interdisciplinar2
                                 if (txtbName.Text != user)
                                 {
                                     lblInvalidUser.Visible = true;
+                                    txtbName.Text = "";
                                 }
 
                                 if (txtbPassword.Text != password)
                                 {
+                                    DefaultPasswordText();
+
                                     lblInvalidPassword.Visible = true;
+                                    txtbPassword.Text = "";
                                 }
                             }
                         }
