@@ -186,5 +186,11 @@
   <ItemGroup>
     <None Include="Resources\human-icon3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-solid.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-solid.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,12 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace interdisciplinar2
@@ -130,41 +125,42 @@ namespace interdisciplinar2
             {
                 mysql.Open();
 
+                MySqlDataReader reader = null;
+
                 using (MySqlCommand command = new MySqlCommand("SELECT nome_barbeiro, senha_barbeiro FROM tb_barbeiro", mysql))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        while (reader.Read())
+                        string user = reader.GetString("nome_barbeiro");
+
+                        string password = reader.GetString("senha_barbeiro");
+
+                        SqlInjectionPrevention();
+
+                        if (txtbName.Text == user && txtbPassword.Text == password)
                         {
-                            string user = reader.GetString("nome_barbeiro");
+                            MessageBox.Show("Login efetuado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            string password = reader.GetString("senha_barbeiro");
-
-                            SqlInjectionPrevention();
-
-                            if (txtbName.Text == user && txtbPassword.Text == password)
+                            this.Hide();
+                            MainScreen mainScreen = new MainScreen();
+                            mainScreen.Show();
+                        }
+                        else
+                        {
+                            if (txtbName.Text != user)
                             {
-                                MessageBox.Show("Login efetuado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                this.Hide();
-                                MainScreen mainScreen = new MainScreen();
-                                mainScreen.Show();
+                                lblInvalidUser.Visible = true;
+                                txtbName.Text = "";
                             }
-                            else
+
+                            if (txtbPassword.Text != password)
                             {
-                                if (txtbName.Text != user)
-                                {
-                                    lblInvalidUser.Visible = true;
-                                    txtbName.Text = "";
-                                }
+                                DefaultPasswordText();
 
-                                if (txtbPassword.Text != password)
-                                {
-                                    DefaultPasswordText();
-
-                                    lblInvalidPassword.Visible = true;
-                                    txtbPassword.Text = "";
-                                }
+                                lblInvalidPassword.Visible = true;
+                                txtbPassword.Text = "";
                             }
                         }
                     }

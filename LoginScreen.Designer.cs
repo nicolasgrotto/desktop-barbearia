@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblClose = new System.Windows.Forms.Label();
             this.panelSide = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,19 +40,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lblInvalidPassword = new System.Windows.Forms.Label();
+            this.lblInvalidUser = new System.Windows.Forms.Label();
             this.dontShowPasswordImage = new System.Windows.Forms.PictureBox();
             this.showPasswordImage = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblInvalidPassword = new System.Windows.Forms.Label();
-            this.lblInvalidUser = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             this.panelSide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dontShowPasswordImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -90,16 +91,6 @@
             this.panelSide.Name = "panelSide";
             this.panelSide.Size = new System.Drawing.Size(205, 335);
             this.panelSide.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 335);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -197,6 +188,32 @@
             this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
+            // lblInvalidPassword
+            // 
+            this.lblInvalidPassword.AutoSize = true;
+            this.lblInvalidPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblInvalidPassword.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvalidPassword.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidPassword.Location = new System.Drawing.Point(428, 284);
+            this.lblInvalidPassword.Name = "lblInvalidPassword";
+            this.lblInvalidPassword.Size = new System.Drawing.Size(153, 20);
+            this.lblInvalidPassword.TabIndex = 14;
+            this.lblInvalidPassword.Text = "Invalid Password";
+            this.lblInvalidPassword.Visible = false;
+            // 
+            // lblInvalidUser
+            // 
+            this.lblInvalidUser.AutoSize = true;
+            this.lblInvalidUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblInvalidUser.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvalidUser.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidUser.Location = new System.Drawing.Point(429, 186);
+            this.lblInvalidUser.Name = "lblInvalidUser";
+            this.lblInvalidUser.Size = new System.Drawing.Size(117, 20);
+            this.lblInvalidUser.TabIndex = 15;
+            this.lblInvalidUser.Text = "Invalid User";
+            this.lblInvalidUser.Visible = false;
+            // 
             // dontShowPasswordImage
             // 
             this.dontShowPasswordImage.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -223,10 +240,10 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::interdisciplinar2.Properties.Resources.password_icon_removebg_preview__2_;
-            this.pictureBox3.Location = new System.Drawing.Point(280, 239);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(280, 237);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 41);
+            this.pictureBox3.Size = new System.Drawing.Size(41, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -241,31 +258,15 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // lblInvalidPassword
+            // pictureBox1
             // 
-            this.lblInvalidPassword.AutoSize = true;
-            this.lblInvalidPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblInvalidPassword.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvalidPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidPassword.Location = new System.Drawing.Point(428, 284);
-            this.lblInvalidPassword.Name = "lblInvalidPassword";
-            this.lblInvalidPassword.Size = new System.Drawing.Size(153, 20);
-            this.lblInvalidPassword.TabIndex = 14;
-            this.lblInvalidPassword.Text = "Invalid Password";
-            this.lblInvalidPassword.Visible = false;
-            // 
-            // lblInvalidUser
-            // 
-            this.lblInvalidUser.AutoSize = true;
-            this.lblInvalidUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblInvalidUser.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvalidUser.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidUser.Location = new System.Drawing.Point(429, 186);
-            this.lblInvalidUser.Name = "lblInvalidUser";
-            this.lblInvalidUser.Size = new System.Drawing.Size(117, 20);
-            this.lblInvalidUser.TabIndex = 15;
-            this.lblInvalidUser.Text = "Invalid User";
-            this.lblInvalidUser.Visible = false;
+            this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 335);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginScreen
             // 
@@ -297,11 +298,11 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelSide.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dontShowPasswordImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
