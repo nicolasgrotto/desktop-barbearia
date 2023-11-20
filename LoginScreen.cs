@@ -3,7 +3,9 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace interdisciplinar2
 {
@@ -40,6 +42,11 @@ namespace interdisciplinar2
 
         private void txtbPassword_TextChanged(object sender, EventArgs e)
         {
+            if (showPasswordImage.Visible == true)
+            {
+                txtbPassword.UseSystemPasswordChar = true;
+            }
+
             txtbPassword.ForeColor = Color.White;
         }
 
@@ -51,7 +58,7 @@ namespace interdisciplinar2
 
         private void lblClose_MouseClick(object sender, MouseEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void txtbName_MouseClick(object sender, MouseEventArgs e)
@@ -124,6 +131,8 @@ namespace interdisciplinar2
             MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=nick1691");
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 mysql.Open();
 
                 MySqlDataReader reader = null;
@@ -166,6 +175,7 @@ namespace interdisciplinar2
                         }
                     }
                 }
+                this.Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
@@ -191,6 +201,21 @@ namespace interdisciplinar2
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void ipbMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            ipbMinimize.BackColor = Color.FromArgb(160, 160, 160);
+        }
+
+        private void ipbMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            ipbMinimize.BackColor = Color.FromArgb(251, 197, 49);
+        }
+
+        private void ipbMinimize_Click_1(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

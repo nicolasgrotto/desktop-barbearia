@@ -47,6 +47,7 @@
             this.showPasswordImage = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ipbMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.panelHeader.SuspendLayout();
             this.panelSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,11 +55,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.panelHeader.Controls.Add(this.ipbMinimize);
             this.panelHeader.Controls.Add(this.lblClose);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -269,6 +272,24 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // ipbMinimize
+            // 
+            this.ipbMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.ipbMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ipbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.ipbMinimize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.ipbMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbMinimize.IconSize = 40;
+            this.ipbMinimize.Location = new System.Drawing.Point(725, 0);
+            this.ipbMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.ipbMinimize.Name = "ipbMinimize";
+            this.ipbMinimize.Size = new System.Drawing.Size(39, 36);
+            this.ipbMinimize.TabIndex = 1;
+            this.ipbMinimize.TabStop = false;
+            this.ipbMinimize.Click += new System.EventHandler(this.ipbMinimize_Click_1);
+            this.ipbMinimize.MouseEnter += new System.EventHandler(this.ipbMinimize_MouseEnter);
+            this.ipbMinimize.MouseLeave += new System.EventHandler(this.ipbMinimize_MouseLeave);
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +352,6 @@
         private System.Windows.Forms.PictureBox dontShowPasswordImage;
         private System.Windows.Forms.Label lblInvalidPassword;
         private System.Windows.Forms.Label lblInvalidUser;
+        private FontAwesome.Sharp.IconPictureBox ipbMinimize;
     }
 }
