@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace interdisciplinar2
@@ -178,6 +179,18 @@ namespace interdisciplinar2
                 }
                 mysql.Dispose();
             }
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private static extern void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private static extern IntPtr SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -73,6 +73,16 @@ namespace interdisciplinar2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barber_logo_no_bg_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("barber-logo-no-bg-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dont_show_password_icon_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("dont-show-password-icon-removebg-preview", resourceCulture);
