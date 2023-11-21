@@ -1,6 +1,6 @@
 ﻿namespace interdisciplinar2
 {
-    partial class AgendamentosScreen
+    partial class DashboardScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // AgendamentosScreen
+            // DashboardScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(764, 506);
-            this.Name = "AgendamentosScreen";
-            this.Text = "AgendamentosScreen";
+            this.Name = "DashboardScreen";
+            this.Text = "DashboardScreen";
             this.ResumeLayout(false);
 
         }

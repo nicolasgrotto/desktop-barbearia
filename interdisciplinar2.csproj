@@ -130,6 +130,24 @@
     <Compile Include="AgendamentosScreen.Designer.cs">
       <DependentUpon>AgendamentosScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlterarSenhaScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarSenhaScreen.Designer.cs">
+      <DependentUpon>AlterarSenhaScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardScreen.Designer.cs">
+      <DependentUpon>DashboardScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoricoScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricoScreen.Designer.cs">
+      <DependentUpon>HistoricoScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +168,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgendamentosScreen.resx">
+      <DependentUpon>AgendamentosScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlterarSenhaScreen.resx">
+      <DependentUpon>AlterarSenhaScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardScreen.resx">
+      <DependentUpon>DashboardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoScreen.resx">
+      <DependentUpon>HistoricoScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

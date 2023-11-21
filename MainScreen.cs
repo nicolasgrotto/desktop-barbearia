@@ -22,7 +22,7 @@ namespace interdisciplinar2
         {
             public static readonly Color color1 = Color.FromArgb(225, 177, 44);
             public static readonly Color color2 = Color.FromArgb(53, 59, 72);
-            public static readonly Color color3 = Color.FromArgb(31, 30, 68);
+            public static readonly Color color3 = Color.FromArgb(47, 54, 64);
             public static readonly Color color4 = Color.FromArgb(253, 138, 114);
             public static readonly Color color5 = Color.FromArgb(95, 77, 221);
             public static readonly Color color6 = Color.FromArgb(24, 161, 251);
@@ -196,6 +196,8 @@ namespace interdisciplinar2
             ClickedBtn(ibHistorico);
             ibHistorico.IconColor = RgbColors.color4;
 
+            OpenChildForm(new HistoricoScreen());
+
             IconFormName(ibHistorico);
         }
 
@@ -205,6 +207,8 @@ namespace interdisciplinar2
             ClickedBtn(ibDashboard);
             ibDashboard.IconColor = RgbColors.color6;
 
+            OpenChildForm(new DashboardScreen());
+
             IconFormName(ibDashboard);
         }
 
@@ -213,6 +217,8 @@ namespace interdisciplinar2
             panelLeftBtn.BackColor = RgbColors.color5;
             ClickedBtn(ibAlterarSenha);
             ibAlterarSenha.IconColor = RgbColors.color5;
+
+            OpenChildForm(new AlterarSenhaScreen());
 
             IconFormName(ibAlterarSenha);
         }
@@ -231,12 +237,12 @@ namespace interdisciplinar2
 
         private void ipbMaximize_MouseLeave(object sender, EventArgs e)
         {
-            ipbMaximize.BackColor = Color.FromArgb(26, 25, 62);
+            ipbMaximize.BackColor = RgbColors.color3;
         }
 
         private void ipbMinimize_MouseLeave(object sender, EventArgs e)
         {
-            ipbMinimize.BackColor = Color.FromArgb(26, 25, 62);
+            ipbMinimize.BackColor = RgbColors.color3;
         }
 
         private void ipbMaximize_MouseEnter(object sender, EventArgs e)
