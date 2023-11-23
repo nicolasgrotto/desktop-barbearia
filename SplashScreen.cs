@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using interdisciplinar2.Models;
 
 namespace interdisciplinar2
 {
@@ -23,6 +24,12 @@ namespace interdisciplinar2
             int nWidthEllipse,
             int nHeightEllipse
         );
+
+        public struct RgbLightColors
+        {
+            public static Color backColor = Color.FromArgb(255, 255, 255);
+            public static Color textColor = Color.FromArgb(0, 0, 0);
+        }
 
         public SplashScreen()
         {
@@ -67,6 +74,19 @@ namespace interdisciplinar2
             else if (label1.Text == "Carregando..")
             {
                 label1.Text = "Carregando...";
+            }
+        }
+
+        private void SplashScreen_Load(object sender, EventArgs e)
+        {
+            if (ThemeController.GetTheme() == "light")
+            {
+                this.BackColor = RgbLightColors.backColor;
+                label1.ForeColor = RgbLightColors.textColor;
+
+                progressBar.BackColor = RgbLightColors.backColor;
+                progressBar.InnerColor = RgbLightColors.backColor;
+                progressBar.ForeColor = RgbLightColors.textColor;
             }
         }
     }

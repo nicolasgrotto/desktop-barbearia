@@ -1,16 +1,32 @@
-﻿using MySql.Data.MySqlClient;
+﻿using interdisciplinar2.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace interdisciplinar2
 {
     public partial class LoginScreen : Form
     {
+        public struct RgbLightColors
+        {
+            public static Color backColor = Color.FromArgb(255, 255, 255);
+            public static Color textColor = Color.FromArgb(0, 0, 0);
+            public static Color btnBackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        public struct RgbDarkColors
+        {
+            public static Color backColor = Color.FromArgb(40, 40, 40);
+            public static Color textColor = Color.FromArgb(255, 255, 255);
+            public static Color btnBackColor = Color.FromArgb(40, 40, 40);
+        }
+
         public LoginScreen()
         {
             InitializeComponent();
@@ -37,7 +53,14 @@ namespace interdisciplinar2
 
         private void txtbName_TextChanged(object sender, EventArgs e)
         {
-            txtbName.ForeColor = Color.White;
+            if (ThemeController.GetTheme() == "light")
+            {
+                txtbName.ForeColor = RgbLightColors.textColor;
+            }
+            else
+            {
+                txtbName.ForeColor = Color.White;
+            }
         }
 
         private void txtbPassword_TextChanged(object sender, EventArgs e)
@@ -47,7 +70,14 @@ namespace interdisciplinar2
                 txtbPassword.UseSystemPasswordChar = true;
             }
 
-            txtbPassword.ForeColor = Color.White;
+            if (ThemeController.GetTheme() == "light")
+            {
+                txtbPassword.ForeColor = RgbLightColors.textColor;
+            }
+            else
+            {
+                txtbPassword.ForeColor = Color.White;
+            }
         }
 
         private void lblClose_MouseLeave(object sender, EventArgs e)
@@ -85,8 +115,16 @@ namespace interdisciplinar2
 
         private void btnLogin_MouseLeave(object sender, EventArgs e)
         {
-            btnLogin.BackColor = Color.Transparent;
-            btnLogin.ForeColor = Color.White;
+            if (ThemeController.GetTheme() == "light")
+            {
+                btnLogin.BackColor = RgbLightColors.btnBackColor;
+                btnLogin.ForeColor = RgbLightColors.textColor;
+            }
+            else
+            {
+                btnLogin.BackColor = Color.Transparent;
+                btnLogin.ForeColor = Color.White;
+            }
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -216,6 +254,34 @@ namespace interdisciplinar2
         private void ipbMinimize_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
+            if (ThemeController.GetTheme() == "light")
+            {
+                this.BackColor = RgbLightColors.backColor;
+
+                btnLogin.BackColor = RgbLightColors.btnBackColor;
+                btnLogin.ForeColor = RgbLightColors.textColor;
+
+                label1.ForeColor = RgbLightColors.textColor;
+                label2.ForeColor = RgbLightColors.textColor;
+                label3.ForeColor = RgbLightColors.textColor;
+
+                panel1.BackColor = RgbLightColors.textColor;
+                panel2.BackColor = RgbLightColors.textColor;
+
+                txtbName.BackColor = RgbLightColors.backColor;
+                txtbName.ForeColor = RgbLightColors.textColor;
+                txtbPassword.BackColor = RgbLightColors.backColor;
+                txtbPassword.ForeColor = RgbLightColors.textColor;
+
+                pictureBox2.Image = Properties.Resources.dark_human_icon;
+                pictureBox3.Image = Properties.Resources.dark_lock_solid;
+                dontShowPasswordImage.Image = Properties.Resources.dark_dont_show_password_icon_removebg_preview;
+                showPasswordImage.Image = Properties.Resources.dark_show_password_icon_removebg_preview;
+            }
         }
     }
 }

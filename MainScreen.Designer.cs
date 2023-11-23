@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection1 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection1 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection1 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.toggleButton1 = new Syncfusion.Windows.Forms.Tools.ToggleButton();
             this.panelLeftBtn = new System.Windows.Forms.Panel();
             this.ibAlterarSenha = new FontAwesome.Sharp.IconButton();
             this.ibDashboard = new FontAwesome.Sharp.IconButton();
@@ -50,6 +55,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerHour = new System.Windows.Forms.Timer(this.components);
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleButton1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -63,6 +69,8 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.panelLeft.Controls.Add(this.label1);
+            this.panelLeft.Controls.Add(this.toggleButton1);
             this.panelLeft.Controls.Add(this.panelLeftBtn);
             this.panelLeft.Controls.Add(this.ibAlterarSenha);
             this.panelLeft.Controls.Add(this.ibDashboard);
@@ -74,6 +82,40 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(220, 600);
             this.panelLeft.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(12, 539);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Dark Mode";
+            // 
+            // toggleButton1
+            // 
+            activeStateCollection1.Text = "DESATIVAR";
+            this.toggleButton1.ActiveState = activeStateCollection1;
+            this.toggleButton1.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleButton1.ForeColor = System.Drawing.Color.Black;
+            inactiveStateCollection1.Text = "ATIVAR";
+            this.toggleButton1.InactiveState = inactiveStateCollection1;
+            this.toggleButton1.Location = new System.Drawing.Point(129, 539);
+            this.toggleButton1.MinimumSize = new System.Drawing.Size(52, 20);
+            this.toggleButton1.Name = "toggleButton1";
+            this.toggleButton1.Size = new System.Drawing.Size(75, 30);
+            this.toggleButton1.Slider = sliderCollection1;
+            this.toggleButton1.TabIndex = 4;
+            this.toggleButton1.Text = "toggleButton1";
+            this.toggleButton1.ThemeName = "";
+            this.toggleButton1.ThemeStyle.ActiveForeColor = System.Drawing.Color.White;
+            this.toggleButton1.ThemeStyle.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.toggleButton1.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.toggleButton1.ThemeStyle.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleButton1.Click += new System.EventHandler(this.toggleButton1_Click);
+            this.toggleButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.toggleButton1_MouseClick);
             // 
             // panelLeftBtn
             // 
@@ -360,6 +402,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleButton1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panelHeader.ResumeLayout(false);
@@ -395,5 +439,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblHour;
         private System.Windows.Forms.Timer timerHour;
+        private System.Windows.Forms.Label label1;
+        private Syncfusion.Windows.Forms.Tools.ToggleButton toggleButton1;
     }
 }

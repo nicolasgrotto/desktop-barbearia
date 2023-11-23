@@ -83,6 +83,46 @@ namespace interdisciplinar2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_dont_show_password_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("dark_dont_show_password_icon_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_human_icon {
+            get {
+                object obj = ResourceManager.GetObject("dark_human_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_lock_solid {
+            get {
+                object obj = ResourceManager.GetObject("dark_lock_solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_show_password_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("dark_show_password_icon_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dont_show_password_icon_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("dont-show-password-icon-removebg-preview", resourceCulture);

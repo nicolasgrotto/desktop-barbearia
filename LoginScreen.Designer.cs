@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.ipbMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.lblClose = new System.Windows.Forms.Label();
             this.panelSide = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,15 +48,14 @@
             this.showPasswordImage = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ipbMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).BeginInit();
             this.panelSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dontShowPasswordImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -70,6 +70,24 @@
             this.panelHeader.Size = new System.Drawing.Size(802, 36);
             this.panelHeader.TabIndex = 0;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
+            // 
+            // ipbMinimize
+            // 
+            this.ipbMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.ipbMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ipbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.ipbMinimize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.ipbMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbMinimize.IconSize = 36;
+            this.ipbMinimize.Location = new System.Drawing.Point(725, 0);
+            this.ipbMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.ipbMinimize.Name = "ipbMinimize";
+            this.ipbMinimize.Size = new System.Drawing.Size(39, 36);
+            this.ipbMinimize.TabIndex = 1;
+            this.ipbMinimize.TabStop = false;
+            this.ipbMinimize.Click += new System.EventHandler(this.ipbMinimize_Click_1);
+            this.ipbMinimize.MouseEnter += new System.EventHandler(this.ipbMinimize_MouseEnter);
+            this.ipbMinimize.MouseLeave += new System.EventHandler(this.ipbMinimize_MouseLeave);
             // 
             // lblClose
             // 
@@ -272,24 +290,6 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // ipbMinimize
-            // 
-            this.ipbMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
-            this.ipbMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ipbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.ipbMinimize.IconColor = System.Drawing.SystemColors.ControlText;
-            this.ipbMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ipbMinimize.IconSize = 40;
-            this.ipbMinimize.Location = new System.Drawing.Point(725, 0);
-            this.ipbMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.ipbMinimize.Name = "ipbMinimize";
-            this.ipbMinimize.Size = new System.Drawing.Size(39, 36);
-            this.ipbMinimize.TabIndex = 1;
-            this.ipbMinimize.TabStop = false;
-            this.ipbMinimize.Click += new System.EventHandler(this.ipbMinimize_Click_1);
-            this.ipbMinimize.MouseEnter += new System.EventHandler(this.ipbMinimize_MouseEnter);
-            this.ipbMinimize.MouseLeave += new System.EventHandler(this.ipbMinimize_MouseLeave);
-            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,15 +318,16 @@
             this.Name = "LoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginScreen";
+            this.Load += new System.EventHandler(this.LoginScreen_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).EndInit();
             this.panelSide.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dontShowPasswordImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPasswordImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

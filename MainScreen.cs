@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using interdisciplinar2.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +10,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using Point = System.Windows.Point;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace interdisciplinar2
 {
@@ -28,9 +31,18 @@ namespace interdisciplinar2
             public static readonly Color color6 = Color.FromArgb(24, 161, 251);
         }
 
+        private struct RgbLightColors
+        {
+            public static Color backColor = Color.FromArgb(255, 255, 255);
+            public static Color textColor = Color.FromArgb(0, 0, 0);
+        }
+
         public MainScreen()
         {
             InitializeComponent();
+
+            if (ThemeController.GetTheme() == "dark")
+                toggleButton1.ToggleState = ToggleButtonState.Active;
 
             this.DoubleBuffered = true;
 
@@ -46,6 +58,11 @@ namespace interdisciplinar2
             }
 
             CurrentChildForm = childForm;
+
+            if (ThemeController.GetTheme() == "light")
+            {
+                childForm.BackColor = RgbLightColors.backColor;
+            }
 
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -75,21 +92,25 @@ namespace interdisciplinar2
             {
                 ibAgendamentos.TextImageRelation = TextImageRelation.ImageBeforeText;
                 ibAgendamentos.IconColor = Color.White;
+                panelLeftBtn.Visible = false;
             }
             else if (ibHistorico.TextImageRelation == TextImageRelation.TextBeforeImage)
             {
                 ibHistorico.TextImageRelation = TextImageRelation.ImageBeforeText;
                 ibHistorico.IconColor = Color.White;
+                panelLeftBtn.Visible = false;
             }
             else if (ibDashboard.TextImageRelation == TextImageRelation.TextBeforeImage)
             {
                 ibDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
                 ibDashboard.IconColor = Color.White;
+                panelLeftBtn.Visible = false;
             }
             else
             {
                 ibAlterarSenha.TextImageRelation = TextImageRelation.ImageBeforeText;
                 ibAlterarSenha.IconColor = Color.White;
+                panelLeftBtn.Visible = false;
             }
         }
 
@@ -179,7 +200,8 @@ namespace interdisciplinar2
 
         private void logo_Click(object sender, EventArgs e)
         {
-            CurrentChildForm.Close();
+            if (CurrentChildForm != null)
+                CurrentChildForm.Close();
 
             UnclickBtn();
             panelLeftBtn.Visible = false;
@@ -287,7 +309,45 @@ namespace interdisciplinar2
 
         private void MainScreen_Load(object sender, EventArgs e)
         {
+            if (ThemeController.GetTheme() == "light")
+            {
+                panelMainForms.BackColor = RgbLightColors.backColor;
+            }
+
             timerHour.Start();
+        }
+
+        private void toggleButton1_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void toggleButton1_Click(object sender, EventArgs e)
+        {
+            System.Threading.Timer timer = new System.Threading.Timer(state =>
+            {
+                if (toggleButton1.ToggleState != ToggleButtonState.Active)
+                {
+                    ThemeController.SetTheme("light");
+
+                    if (CurrentChildForm != null)
+                    {
+                        CurrentChildForm.BackColor = RgbLightColors.backColor;
+                    }
+
+                    panelMainForms.BackColor = Color.White;
+                }
+                else if (toggleButton1.ToggleState != ToggleButtonState.Inactive)
+                {
+                    ThemeController.SetTheme("dark");
+
+                    if (CurrentChildForm != null)
+                    {
+                        CurrentChildForm.BackColor = Color.FromArgb(87, 96, 111);
+                    }
+
+                    panelMainForms.BackColor = Color.FromArgb(87, 96, 111);
+                }
+            }, null, 0, 100);
         }
     }
 }

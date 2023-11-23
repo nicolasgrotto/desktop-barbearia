@@ -18,6 +18,7 @@ namespace interdisciplinar2.Properties
     {
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        internal readonly string Theme;
 
         public static Settings Default
         {
