@@ -21,7 +21,7 @@ namespace interdisciplinar2
         private struct RgbColors
         {
             public static readonly Color color1 = Color.FromArgb(225, 177, 44);
-            public static readonly Color color2 = Color.FromArgb(53, 59, 72);
+            public static readonly Color color2 = Color.FromArgb(47, 53, 66);
             public static readonly Color color3 = Color.FromArgb(47, 54, 64);
             public static readonly Color color4 = Color.FromArgb(253, 138, 114);
             public static readonly Color color5 = Color.FromArgb(95, 77, 221);
