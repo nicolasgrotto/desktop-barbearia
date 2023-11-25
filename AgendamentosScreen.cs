@@ -22,18 +22,16 @@ namespace interdisciplinar2
         {
             try
             {
-                if (txtNome.Text == "")
-                {
-                    MessageBox.Show("Preencha todos os campos", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    txtNome.Focus();
-                }
-                else if (txtNome.Text == "")
-                {
-                    MessageBox.Show("Verefique se todos os campos estão preenchidos", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                }
-                else
-                {
+                string[] dados = new string[1] { txtNome.Text,};
 
+                foreach (string values in dados)
+                {
+                    if (values == "")
+                    {
+                        MessageBox.Show("Preencha todos os campos", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        txtNome.Focus();
+                    }
+                };
                     string conexao = "server= ;localhost= ; database= ; uid= ;pwd= ;";
                     MySqlConnection conexaoMsql = new MySqlConnection(conexao);
                     conexaoMsql.Open();
@@ -43,8 +41,6 @@ namespace interdisciplinar2
 
                     MessageBox.Show("Agendamento feito", "Horário marcado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNome.Text = "";
-                }
-
             }catch (Exception ex)
             {
                 MessageBox.Show("Verifique isso" + ex.Message, "Algo deu errado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
