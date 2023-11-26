@@ -251,7 +251,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(220, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(780, 55);
+            this.panelHeader.Size = new System.Drawing.Size(780, 43);
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
@@ -341,9 +341,9 @@
             this.panelMainForms.Controls.Add(this.lblHour);
             this.panelMainForms.Controls.Add(this.pictureBox1);
             this.panelMainForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainForms.Location = new System.Drawing.Point(220, 55);
+            this.panelMainForms.Location = new System.Drawing.Point(220, 43);
             this.panelMainForms.Name = "panelMainForms";
-            this.panelMainForms.Size = new System.Drawing.Size(780, 545);
+            this.panelMainForms.Size = new System.Drawing.Size(780, 557);
             this.panelMainForms.TabIndex = 2;
             // 
             // lblDate
@@ -352,7 +352,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
-            this.lblDate.Location = new System.Drawing.Point(308, 319);
+            this.lblDate.Location = new System.Drawing.Point(308, 325);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(187, 39);
             this.lblDate.TabIndex = 2;
@@ -364,7 +364,7 @@
             this.lblHour.AutoSize = true;
             this.lblHour.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
-            this.lblHour.Location = new System.Drawing.Point(323, 280);
+            this.lblHour.Location = new System.Drawing.Point(323, 286);
             this.lblHour.Name = "lblHour";
             this.lblHour.Size = new System.Drawing.Size(153, 39);
             this.lblHour.TabIndex = 1;
@@ -374,7 +374,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo_no_bg_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(296, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(296, 84);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
