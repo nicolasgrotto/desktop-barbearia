@@ -317,10 +317,6 @@ namespace interdisciplinar2
             timerHour.Start();
         }
 
-        private void toggleButton1_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
-
         private void toggleButton1_Click(object sender, EventArgs e)
         {
             System.Threading.Timer timer = new System.Threading.Timer(state =>
@@ -342,12 +338,32 @@ namespace interdisciplinar2
 
                     if (CurrentChildForm != null)
                     {
-                        CurrentChildForm.BackColor = Color.FromArgb(87, 96, 111);
+                        CurrentChildForm.BackColor = Color.FromArgb(40, 40, 40);
                     }
 
-                    panelMainForms.BackColor = Color.FromArgb(87, 96, 111);
+                    panelMainForms.BackColor = Color.FromArgb(40, 40, 40);
                 }
-            }, null, 0, 100);
+            }, null, 0, 300);
+        }
+
+        private void toggleButton1_ToggleStateChanged(object sender, ToggleStateChangedEventArgs e)
+        {
+            if (CurrentChildForm is AgendamentosScreen)
+            {
+                OpenChildForm(new AgendamentosScreen());
+            }
+            else if (CurrentChildForm is HistoricoScreen)
+            {
+                OpenChildForm(new HistoricoScreen());
+            }
+            else if (CurrentChildForm is DashboardScreen)
+            {
+                OpenChildForm(new DashboardScreen());
+            }
+            else if (CurrentChildForm is AlterarSenhaScreen)
+            {
+                OpenChildForm(new AlterarSenhaScreen());
+            }
         }
     }
 }

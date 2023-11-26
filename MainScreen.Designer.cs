@@ -86,13 +86,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(12, 539);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.Size = new System.Drawing.Size(109, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Dark Mode";
+            this.label1.Text = "Modo Escuro";
             // 
             // toggleButton1
             // 
@@ -114,8 +114,8 @@
             this.toggleButton1.ThemeStyle.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.toggleButton1.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.toggleButton1.ThemeStyle.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleButton1.ToggleStateChanged += new Syncfusion.Windows.Forms.Tools.ToggleStateChangedEventHandler(this.toggleButton1_ToggleStateChanged);
             this.toggleButton1.Click += new System.EventHandler(this.toggleButton1_Click);
-            this.toggleButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.toggleButton1_MouseClick);
             // 
             // panelLeftBtn
             // 
@@ -251,7 +251,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(220, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(780, 55);
+            this.panelHeader.Size = new System.Drawing.Size(780, 43);
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
@@ -336,14 +336,14 @@
             // 
             // panelMainForms
             // 
-            this.panelMainForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(96)))), ((int)(((byte)(111)))));
+            this.panelMainForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panelMainForms.Controls.Add(this.lblDate);
             this.panelMainForms.Controls.Add(this.lblHour);
             this.panelMainForms.Controls.Add(this.pictureBox1);
             this.panelMainForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainForms.Location = new System.Drawing.Point(220, 55);
+            this.panelMainForms.Location = new System.Drawing.Point(220, 43);
             this.panelMainForms.Name = "panelMainForms";
-            this.panelMainForms.Size = new System.Drawing.Size(780, 545);
+            this.panelMainForms.Size = new System.Drawing.Size(780, 557);
             this.panelMainForms.TabIndex = 2;
             // 
             // lblDate
@@ -352,7 +352,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
-            this.lblDate.Location = new System.Drawing.Point(308, 319);
+            this.lblDate.Location = new System.Drawing.Point(308, 325);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(187, 39);
             this.lblDate.TabIndex = 2;
@@ -364,7 +364,7 @@
             this.lblHour.AutoSize = true;
             this.lblHour.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
-            this.lblHour.Location = new System.Drawing.Point(323, 280);
+            this.lblHour.Location = new System.Drawing.Point(323, 286);
             this.lblHour.Name = "lblHour";
             this.lblHour.Size = new System.Drawing.Size(153, 39);
             this.lblHour.TabIndex = 1;
@@ -374,7 +374,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo_no_bg_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(296, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(296, 84);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
