@@ -22,29 +22,52 @@ namespace interdisciplinar2
         {
             try
             {
-                string[] dados = new string[1] { txtNome.Text,};
+                string[] dados = new string[3] { txtNome.Text, txtCorte.Text,txtData.Text};
+                int cont = 0;
 
                 foreach (string values in dados)
                 {
                     if (values == "")
                     {
-                        MessageBox.Show("Preencha todos os campos", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        txtNome.Focus();
+                        cont++;
                     }
                 };
-                    string conexao = "server= ;localhost= ; database= ; uid= ;pwd= ;";
+                if (cont >= 1)
+                {
+                    MessageBox.Show("Você deixou" + cont +  "campo em branco, o preencha!", "aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    string conexao = "server=localhost;database=db_barbearia;uid=root;pwd= ;";
                     MySqlConnection conexaoMsql = new MySqlConnection(conexao);
                     conexaoMsql.Open();
 
-                    MySqlCommand comando = new MySqlCommand("insert into tb_cliente values('" + txtNome.Text + "');", conexaoMsql);
+                    MySqlCommand comando = new MySqlCommand("insert into tb_cliente values('" + txtNome.Text + "','" + txtCorte.Text + "','" + txtData + "');", conexaoMsql);
                     comando.ExecuteNonQuery();
 
                     MessageBox.Show("Agendamento feito", "Horário marcado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNome.Text = "";
+                }
             }catch (Exception ex)
             {
                 MessageBox.Show("Verifique isso" + ex.Message, "Algo deu errado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            DialogResult caixamensagem = MessageBox.Show("Deseja mesmo voltar a tela de menu", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (caixamensagem == DialogResult.Yes)
+            {
+                MainScreen mainscreen = new MainScreen();
+                mainscreen.Show(); 
+            }
+        }
+
+        private void AgendamentosScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

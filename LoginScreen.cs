@@ -166,7 +166,7 @@ namespace interdisciplinar2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=nick1691");
+            MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=njhon");
             try
             {
                 this.Cursor = Cursors.WaitCursor;
@@ -283,5 +283,6 @@ namespace interdisciplinar2
                 showPasswordImage.Image = Properties.Resources.dark_show_password_icon_removebg_preview;
             }
         }
+
     }
 }
