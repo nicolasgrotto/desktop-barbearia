@@ -283,6 +283,5 @@ namespace interdisciplinar2
                 showPasswordImage.Image = Properties.Resources.dark_show_password_icon_removebg_preview;
             }
         }
-
     }
 }

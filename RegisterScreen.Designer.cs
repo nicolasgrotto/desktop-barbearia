@@ -149,7 +149,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "AgendamentosScreen";
             this.Text = "AgendamentosScreen";
-            this.Load += new System.EventHandler(this.AgendamentosScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

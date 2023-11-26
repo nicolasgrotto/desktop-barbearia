@@ -38,15 +38,20 @@ namespace interdisciplinar2
                 }
                 else
                 {
-                    string conexao = "server=localhost;database=db_barbearia;uid=root;pwd= ;";
-                    MySqlConnection conexaoMsql = new MySqlConnection(conexao);
-                    conexaoMsql.Open();
+                    string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=jhon;";
+                    MySqlConnection conexaoMysql = new MySqlConnection(conexao);
+                    conexaoMysql.Open();
 
-                    MySqlCommand comando = new MySqlCommand("insert into tb_cliente values('" + txtNome.Text + "','" + txtCorte.Text + "','" + txtData + "');", conexaoMsql);
+
+                    MySqlCommand comando = new MySqlCommand("insert into tb_agendamento(cortes,datahora) values('" + txtCorte.Text + "','"+ txtData.Text+ "');", conexaoMysql);
+                    MySqlCommand addnome = new MySqlCommand("insert into tb_clientes(nome) values('" + txtNome.Text + "');", conexaoMysql);
+                    addnome.ExecuteNonQuery(); 
                     comando.ExecuteNonQuery();
 
                     MessageBox.Show("Agendamento feito", "Horário marcado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNome.Text = "";
+                    txtCorte.Text = "";
+                    txtData.Text = "";
                 }
             }catch (Exception ex)
             {
@@ -63,11 +68,6 @@ namespace interdisciplinar2
                 MainScreen mainscreen = new MainScreen();
                 mainscreen.Show(); 
             }
-        }
-
-        private void AgendamentosScreen_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
