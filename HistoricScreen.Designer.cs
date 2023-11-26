@@ -1,6 +1,6 @@
 ﻿namespace interdisciplinar2
 {
-    partial class HistoricoScreen
+    partial class HistoricScreen
     {
         /// <summary>
         /// Required designer variable.

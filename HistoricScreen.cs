@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace interdisciplinar2
 {
-    public partial class HistoricoScreen : Form
+    public partial class HistoricScreen : Form
     {
-        public HistoricoScreen()
+        public HistoricScreen()
         {
             InitializeComponent();
         }

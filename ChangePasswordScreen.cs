@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace interdisciplinar2
 {
-    public partial class AlterarSenhaScreen : Form
+    public partial class ChangePasswordScreen : Form
     {
         private struct RgbLightColors
         {
@@ -15,7 +15,7 @@ namespace interdisciplinar2
             public static Color btnBackColor = Color.FromArgb(215, 215, 215);
         }
 
-        public AlterarSenhaScreen()
+        public ChangePasswordScreen()
         {
             InitializeComponent();
         }

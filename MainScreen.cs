@@ -1,19 +1,10 @@
 ﻿using FontAwesome.Sharp;
 using interdisciplinar2.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls.Primitives;
-using System.Windows.Forms;
-using Point = System.Windows.Point;
 using Syncfusion.Windows.Forms.Tools;
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace interdisciplinar2
 {
@@ -134,7 +125,7 @@ namespace interdisciplinar2
 
         private void lblExit_MouseLeave(object sender, EventArgs e)
         {
-            lblExit.BackColor = RgbColors.color3;
+            lblExit.BackColor = Color.Transparent;
         }
 
         private void BtnMouseEnter(IconButton btn)
@@ -201,7 +192,10 @@ namespace interdisciplinar2
         private void logo_Click(object sender, EventArgs e)
         {
             if (CurrentChildForm != null)
+            {
                 CurrentChildForm.Close();
+                CurrentChildForm = null;
+            }
 
             UnclickBtn();
             panelLeftBtn.Visible = false;
@@ -218,7 +212,8 @@ namespace interdisciplinar2
             ClickedBtn(ibHistorico);
             ibHistorico.IconColor = RgbColors.color4;
 
-            OpenChildForm(new HistoricoScreen());
+            pnlDropDown.Visible = true;
+            pnlDropDown.Location = new Point(0, ibHistorico.Location.Y + 50);
 
             IconFormName(ibHistorico);
         }
@@ -240,7 +235,7 @@ namespace interdisciplinar2
             ClickedBtn(ibAlterarSenha);
             ibAlterarSenha.IconColor = RgbColors.color5;
 
-            OpenChildForm(new AlterarSenhaScreen());
+            OpenChildForm(new ChangePasswordScreen());
 
             IconFormName(ibAlterarSenha);
         }
@@ -259,12 +254,12 @@ namespace interdisciplinar2
 
         private void ipbMaximize_MouseLeave(object sender, EventArgs e)
         {
-            ipbMaximize.BackColor = RgbColors.color3;
+            ipbMaximize.BackColor = Color.Transparent;
         }
 
         private void ipbMinimize_MouseLeave(object sender, EventArgs e)
         {
-            ipbMinimize.BackColor = RgbColors.color3;
+            ipbMinimize.BackColor = Color.Transparent;
         }
 
         private void ipbMaximize_MouseEnter(object sender, EventArgs e)
@@ -330,6 +325,8 @@ namespace interdisciplinar2
                         CurrentChildForm.BackColor = RgbLightColors.backColor;
                     }
 
+                    pictureBox1.Image = Properties.Resources.barber_logo_no_bg_removebg_preview_transformed;
+
                     panelMainForms.BackColor = Color.White;
                 }
                 else if (toggleButton1.ToggleState != ToggleButtonState.Inactive)
@@ -341,6 +338,8 @@ namespace interdisciplinar2
                         CurrentChildForm.BackColor = Color.FromArgb(40, 40, 40);
                     }
 
+                    pictureBox1.Image = Properties.Resources.barber_logo_no_bg_removebg_preview;
+
                     panelMainForms.BackColor = Color.FromArgb(40, 40, 40);
                 }
             }, null, 0, 300);
@@ -348,22 +347,57 @@ namespace interdisciplinar2
 
         private void toggleButton1_ToggleStateChanged(object sender, ToggleStateChangedEventArgs e)
         {
-            if (CurrentChildForm is AgendamentosScreen)
+            if (CurrentChildForm != null)
             {
-                OpenChildForm(new AgendamentosScreen());
+                if (CurrentChildForm is AgendamentosScreen)
+                    OpenChildForm(new AgendamentosScreen());
+                else if (CurrentChildForm is SchedulesScreen)
+                    OpenChildForm(new SchedulesScreen());
+                else if (CurrentChildForm is HistoricScreen)
+                    OpenChildForm(new HistoricScreen());
+                else if (CurrentChildForm is DashboardScreen)
+                    OpenChildForm(new DashboardScreen());
+                else if (CurrentChildForm is ChangePasswordScreen)
+                    OpenChildForm(new ChangePasswordScreen());
             }
-            else if (CurrentChildForm is HistoricoScreen)
-            {
-                OpenChildForm(new HistoricoScreen());
-            }
-            else if (CurrentChildForm is DashboardScreen)
-            {
-                OpenChildForm(new DashboardScreen());
-            }
-            else if (CurrentChildForm is AlterarSenhaScreen)
-            {
-                OpenChildForm(new AlterarSenhaScreen());
-            }
+        }
+
+        private void lblAgendamentos_MouseEnter(object sender, EventArgs e)
+        {
+            lblAgendamentos.BackColor = Color.FromArgb(80, 80, 80);
+        }
+
+        private void lblAgendamentos_MouseLeave(object sender, EventArgs e)
+        {
+            lblAgendamentos.BackColor = Color.Transparent;
+        }
+
+        private void lblHistorico_MouseEnter(object sender, EventArgs e)
+        {
+            lblHistorico.BackColor = Color.FromArgb(80, 80, 80);
+        }
+
+        private void lblHistorico_MouseLeave(object sender, EventArgs e)
+        {
+            lblHistorico.BackColor = Color.Transparent;
+        }
+
+        private void lblAgendamentos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new SchedulesScreen());
+
+            pnlDropDown.Visible = false;
+
+            lblFormName.Text = "Agendamentos Futuros";
+        }
+
+        private void lblHistorico_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new HistoricScreen());
+
+            pnlDropDown.Visible = false;
+
+            lblFormName.Text = "Histórico";
         }
     }
 }

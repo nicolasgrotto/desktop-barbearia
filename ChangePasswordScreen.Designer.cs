@@ -1,6 +1,6 @@
 ﻿namespace interdisciplinar2
 {
-    partial class AlterarSenhaScreen
+    partial class ChangePasswordScreen
     {
         /// <summary>
         /// Required designer variable.

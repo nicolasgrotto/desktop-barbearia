@@ -148,17 +148,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgendamentosScreen.cs">
+    <Compile Include="RegisterScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgendamentosScreen.Designer.cs">
-      <DependentUpon>AgendamentosScreen.cs</DependentUpon>
+    <Compile Include="RegisterScreen.Designer.cs">
+      <DependentUpon>RegisterScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AlterarSenhaScreen.cs">
+    <Compile Include="ChangePasswordScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlterarSenhaScreen.Designer.cs">
-      <DependentUpon>AlterarSenhaScreen.cs</DependentUpon>
+    <Compile Include="ChangePasswordScreen.Designer.cs">
+      <DependentUpon>ChangePasswordScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="DashboardScreen.cs">
       <SubType>Form</SubType>
@@ -166,11 +166,11 @@
     <Compile Include="DashboardScreen.Designer.cs">
       <DependentUpon>DashboardScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="HistoricoScreen.cs">
+    <Compile Include="HistoricScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HistoricoScreen.Designer.cs">
-      <DependentUpon>HistoricoScreen.cs</DependentUpon>
+    <Compile Include="HistoricScreen.Designer.cs">
+      <DependentUpon>HistoricScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -185,6 +185,12 @@
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ThemeController.cs" />
+    <Compile Include="SchedulesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchedulesScreen.Designer.cs">
+      <DependentUpon>SchedulesScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,17 +199,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AgendamentosScreen.resx">
-      <DependentUpon>AgendamentosScreen.cs</DependentUpon>
+    <EmbeddedResource Include="RegisterScreen.resx">
+      <DependentUpon>RegisterScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AlterarSenhaScreen.resx">
-      <DependentUpon>AlterarSenhaScreen.cs</DependentUpon>
+    <EmbeddedResource Include="ChangePasswordScreen.resx">
+      <DependentUpon>ChangePasswordScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardScreen.resx">
       <DependentUpon>DashboardScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HistoricoScreen.resx">
-      <DependentUpon>HistoricoScreen.cs</DependentUpon>
+    <EmbeddedResource Include="HistoricScreen.resx">
+      <DependentUpon>HistoricScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
@@ -221,6 +227,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SchedulesScreen.resx">
+      <DependentUpon>SchedulesScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +280,7 @@
     <None Include="Resources\dark-dont-show-password-icon-removebg-preview.png" />
     <None Include="Resources\dark-lock-solid.png" />
     <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\barber-logo-no-bg-removebg-preview-transformed.png" />
     <Content Include="ThemeFile\Theme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

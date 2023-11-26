@@ -37,38 +37,43 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toggleButton1 = new Syncfusion.Windows.Forms.Tools.ToggleButton();
             this.panelLeftBtn = new System.Windows.Forms.Panel();
-            this.ibAlterarSenha = new FontAwesome.Sharp.IconButton();
-            this.ibDashboard = new FontAwesome.Sharp.IconButton();
-            this.ibHistorico = new FontAwesome.Sharp.IconButton();
-            this.ibAgendamentos = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.ipbMinimize = new FontAwesome.Sharp.IconPictureBox();
-            this.ipbMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.lblFormName = new System.Windows.Forms.Label();
-            this.ipbFormIcon = new FontAwesome.Sharp.IconPictureBox();
             this.lblExit = new System.Windows.Forms.Label();
             this.panelMainForms = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblHour = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerHour = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ipbMinimize = new FontAwesome.Sharp.IconPictureBox();
+            this.ipbMaximize = new FontAwesome.Sharp.IconPictureBox();
+            this.ipbFormIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.ibAlterarSenha = new FontAwesome.Sharp.IconButton();
+            this.ibDashboard = new FontAwesome.Sharp.IconButton();
+            this.ibHistorico = new FontAwesome.Sharp.IconButton();
+            this.ibAgendamentos = new FontAwesome.Sharp.IconButton();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.pnlDropDown = new System.Windows.Forms.Panel();
+            this.lblAgendamentos = new System.Windows.Forms.Label();
+            this.lblHistorico = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButton1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelHeader.SuspendLayout();
+            this.panelMainForms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbFormIcon)).BeginInit();
-            this.panelMainForms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.pnlDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.panelLeft.Controls.Add(this.pnlDropDown);
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.toggleButton1);
             this.panelLeft.Controls.Add(this.panelLeftBtn);
@@ -125,6 +130,162 @@
             this.panelLeftBtn.Size = new System.Drawing.Size(7, 58);
             this.panelLeftBtn.TabIndex = 2;
             this.panelLeftBtn.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.logo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 200);
+            this.panel1.TabIndex = 1;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.panelHeader.Controls.Add(this.ipbMinimize);
+            this.panelHeader.Controls.Add(this.ipbMaximize);
+            this.panelHeader.Controls.Add(this.lblFormName);
+            this.panelHeader.Controls.Add(this.ipbFormIcon);
+            this.panelHeader.Controls.Add(this.lblExit);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(220, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(780, 39);
+            this.panelHeader.TabIndex = 1;
+            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
+            // 
+            // lblFormName
+            // 
+            this.lblFormName.AutoSize = true;
+            this.lblFormName.Font = new System.Drawing.Font("Cascadia Code SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFormName.Location = new System.Drawing.Point(59, 9);
+            this.lblFormName.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFormName.Name = "lblFormName";
+            this.lblFormName.Size = new System.Drawing.Size(60, 28);
+            this.lblFormName.TabIndex = 5;
+            this.lblFormName.Text = "Home";
+            // 
+            // lblExit
+            // 
+            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExit.BackColor = System.Drawing.Color.Transparent;
+            this.lblExit.Font = new System.Drawing.Font("Cascadia Code", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblExit.Location = new System.Drawing.Point(744, -2);
+            this.lblExit.Margin = new System.Windows.Forms.Padding(0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblExit.Size = new System.Drawing.Size(36, 43);
+            this.lblExit.TabIndex = 0;
+            this.lblExit.Text = "X";
+            this.lblExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            this.lblExit.MouseEnter += new System.EventHandler(this.lblExit_MouseEnter);
+            this.lblExit.MouseLeave += new System.EventHandler(this.lblExit_MouseLeave);
+            // 
+            // panelMainForms
+            // 
+            this.panelMainForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panelMainForms.Controls.Add(this.lblDate);
+            this.panelMainForms.Controls.Add(this.lblHour);
+            this.panelMainForms.Controls.Add(this.pictureBox1);
+            this.panelMainForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainForms.Location = new System.Drawing.Point(220, 39);
+            this.panelMainForms.Name = "panelMainForms";
+            this.panelMainForms.Size = new System.Drawing.Size(780, 561);
+            this.panelMainForms.TabIndex = 2;
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
+            this.lblDate.Location = new System.Drawing.Point(308, 327);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(187, 39);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "dd/mm/yyyy";
+            // 
+            // lblHour
+            // 
+            this.lblHour.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
+            this.lblHour.Location = new System.Drawing.Point(323, 288);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(153, 39);
+            this.lblHour.TabIndex = 1;
+            this.lblHour.Text = "00:00:00";
+            // 
+            // timerHour
+            // 
+            this.timerHour.Interval = 950;
+            this.timerHour.Tick += new System.EventHandler(this.timerHour_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo_no_bg_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(296, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 199);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ipbMinimize
+            // 
+            this.ipbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ipbMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.ipbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.ipbMinimize.IconColor = System.Drawing.Color.White;
+            this.ipbMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbMinimize.IconSize = 41;
+            this.ipbMinimize.Location = new System.Drawing.Point(663, 0);
+            this.ipbMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.ipbMinimize.Name = "ipbMinimize";
+            this.ipbMinimize.Size = new System.Drawing.Size(43, 41);
+            this.ipbMinimize.TabIndex = 7;
+            this.ipbMinimize.TabStop = false;
+            this.ipbMinimize.Click += new System.EventHandler(this.ipbMinimize_Click);
+            this.ipbMinimize.MouseEnter += new System.EventHandler(this.ipbMinimize_MouseEnter);
+            this.ipbMinimize.MouseLeave += new System.EventHandler(this.ipbMinimize_MouseLeave);
+            // 
+            // ipbMaximize
+            // 
+            this.ipbMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ipbMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.ipbMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.ipbMaximize.IconColor = System.Drawing.Color.White;
+            this.ipbMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbMaximize.IconSize = 38;
+            this.ipbMaximize.Location = new System.Drawing.Point(706, 0);
+            this.ipbMaximize.Margin = new System.Windows.Forms.Padding(0);
+            this.ipbMaximize.Name = "ipbMaximize";
+            this.ipbMaximize.Size = new System.Drawing.Size(38, 41);
+            this.ipbMaximize.TabIndex = 6;
+            this.ipbMaximize.TabStop = false;
+            this.ipbMaximize.Click += new System.EventHandler(this.ipbMaximize_Click);
+            this.ipbMaximize.MouseEnter += new System.EventHandler(this.ipbMaximize_MouseEnter);
+            this.ipbMaximize.MouseLeave += new System.EventHandler(this.ipbMaximize_MouseLeave);
+            // 
+            // ipbFormIcon
+            // 
+            this.ipbFormIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.ipbFormIcon.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.ipbFormIcon.IconColor = System.Drawing.Color.White;
+            this.ipbFormIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbFormIcon.Location = new System.Drawing.Point(18, 9);
+            this.ipbFormIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.ipbFormIcon.Name = "ipbFormIcon";
+            this.ipbFormIcon.Size = new System.Drawing.Size(32, 32);
+            this.ipbFormIcon.TabIndex = 1;
+            this.ipbFormIcon.TabStop = false;
             // 
             // ibAlterarSenha
             // 
@@ -187,7 +348,7 @@
             this.ibHistorico.Name = "ibHistorico";
             this.ibHistorico.Size = new System.Drawing.Size(220, 58);
             this.ibHistorico.TabIndex = 1;
-            this.ibHistorico.Text = "Histórico";
+            this.ibHistorico.Text = "Agendamentos";
             this.ibHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibHistorico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibHistorico.UseVisualStyleBackColor = true;
@@ -219,15 +380,6 @@
             this.ibAgendamentos.MouseEnter += new System.EventHandler(this.ibAgendamentos_MouseEnter);
             this.ibAgendamentos.MouseLeave += new System.EventHandler(this.ibAgendamentos_MouseLeave);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.logo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 200);
-            this.panel1.TabIndex = 1;
-            // 
             // logo
             // 
             this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -240,151 +392,44 @@
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
-            // panelHeader
+            // pnlDropDown
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
-            this.panelHeader.Controls.Add(this.ipbMinimize);
-            this.panelHeader.Controls.Add(this.ipbMaximize);
-            this.panelHeader.Controls.Add(this.lblFormName);
-            this.panelHeader.Controls.Add(this.ipbFormIcon);
-            this.panelHeader.Controls.Add(this.lblExit);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(220, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(780, 55);
-            this.panelHeader.TabIndex = 1;
-            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
+            this.pnlDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlDropDown.Controls.Add(this.lblHistorico);
+            this.pnlDropDown.Controls.Add(this.lblAgendamentos);
+            this.pnlDropDown.Location = new System.Drawing.Point(0, 428);
+            this.pnlDropDown.Name = "pnlDropDown";
+            this.pnlDropDown.Size = new System.Drawing.Size(220, 70);
+            this.pnlDropDown.TabIndex = 3;
+            this.pnlDropDown.Visible = false;
             // 
-            // ipbMinimize
+            // lblAgendamentos
             // 
-            this.ipbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ipbMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.ipbMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.ipbMinimize.IconColor = System.Drawing.Color.White;
-            this.ipbMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ipbMinimize.IconSize = 41;
-            this.ipbMinimize.Location = new System.Drawing.Point(663, 0);
-            this.ipbMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.ipbMinimize.Name = "ipbMinimize";
-            this.ipbMinimize.Size = new System.Drawing.Size(43, 41);
-            this.ipbMinimize.TabIndex = 7;
-            this.ipbMinimize.TabStop = false;
-            this.ipbMinimize.Click += new System.EventHandler(this.ipbMinimize_Click);
-            this.ipbMinimize.MouseEnter += new System.EventHandler(this.ipbMinimize_MouseEnter);
-            this.ipbMinimize.MouseLeave += new System.EventHandler(this.ipbMinimize_MouseLeave);
+            this.lblAgendamentos.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgendamentos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAgendamentos.Location = new System.Drawing.Point(0, 0);
+            this.lblAgendamentos.Name = "lblAgendamentos";
+            this.lblAgendamentos.Size = new System.Drawing.Size(220, 35);
+            this.lblAgendamentos.TabIndex = 3;
+            this.lblAgendamentos.Text = "Agendamentos Futuros";
+            this.lblAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAgendamentos.Click += new System.EventHandler(this.lblAgendamentos_Click);
+            this.lblAgendamentos.MouseEnter += new System.EventHandler(this.lblAgendamentos_MouseEnter);
+            this.lblAgendamentos.MouseLeave += new System.EventHandler(this.lblAgendamentos_MouseLeave);
             // 
-            // ipbMaximize
+            // lblHistorico
             // 
-            this.ipbMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ipbMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.ipbMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.ipbMaximize.IconColor = System.Drawing.Color.White;
-            this.ipbMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ipbMaximize.IconSize = 38;
-            this.ipbMaximize.Location = new System.Drawing.Point(706, 0);
-            this.ipbMaximize.Margin = new System.Windows.Forms.Padding(0);
-            this.ipbMaximize.Name = "ipbMaximize";
-            this.ipbMaximize.Size = new System.Drawing.Size(38, 41);
-            this.ipbMaximize.TabIndex = 6;
-            this.ipbMaximize.TabStop = false;
-            this.ipbMaximize.Click += new System.EventHandler(this.ipbMaximize_Click);
-            this.ipbMaximize.MouseEnter += new System.EventHandler(this.ipbMaximize_MouseEnter);
-            this.ipbMaximize.MouseLeave += new System.EventHandler(this.ipbMaximize_MouseLeave);
-            // 
-            // lblFormName
-            // 
-            this.lblFormName.AutoSize = true;
-            this.lblFormName.Font = new System.Drawing.Font("Cascadia Code SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormName.Location = new System.Drawing.Point(59, 9);
-            this.lblFormName.Margin = new System.Windows.Forms.Padding(0);
-            this.lblFormName.Name = "lblFormName";
-            this.lblFormName.Size = new System.Drawing.Size(60, 28);
-            this.lblFormName.TabIndex = 5;
-            this.lblFormName.Text = "Home";
-            // 
-            // ipbFormIcon
-            // 
-            this.ipbFormIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.ipbFormIcon.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.ipbFormIcon.IconColor = System.Drawing.Color.White;
-            this.ipbFormIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ipbFormIcon.Location = new System.Drawing.Point(18, 9);
-            this.ipbFormIcon.Margin = new System.Windows.Forms.Padding(0);
-            this.ipbFormIcon.Name = "ipbFormIcon";
-            this.ipbFormIcon.Size = new System.Drawing.Size(32, 32);
-            this.ipbFormIcon.TabIndex = 1;
-            this.ipbFormIcon.TabStop = false;
-            // 
-            // lblExit
-            // 
-            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblExit.Font = new System.Drawing.Font("Cascadia Code", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblExit.Location = new System.Drawing.Point(744, -2);
-            this.lblExit.Margin = new System.Windows.Forms.Padding(0);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblExit.Size = new System.Drawing.Size(36, 43);
-            this.lblExit.TabIndex = 0;
-            this.lblExit.Text = "X";
-            this.lblExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
-            this.lblExit.MouseEnter += new System.EventHandler(this.lblExit_MouseEnter);
-            this.lblExit.MouseLeave += new System.EventHandler(this.lblExit_MouseLeave);
-            // 
-            // panelMainForms
-            // 
-            this.panelMainForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panelMainForms.Controls.Add(this.lblDate);
-            this.panelMainForms.Controls.Add(this.lblHour);
-            this.panelMainForms.Controls.Add(this.pictureBox1);
-            this.panelMainForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainForms.Location = new System.Drawing.Point(220, 55);
-            this.panelMainForms.Name = "panelMainForms";
-            this.panelMainForms.Size = new System.Drawing.Size(780, 545);
-            this.panelMainForms.TabIndex = 2;
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
-            this.lblDate.Location = new System.Drawing.Point(308, 319);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(187, 39);
-            this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "dd/mm/yyyy";
-            // 
-            // lblHour
-            // 
-            this.lblHour.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHour.AutoSize = true;
-            this.lblHour.Font = new System.Drawing.Font("Cascadia Code", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
-            this.lblHour.Location = new System.Drawing.Point(323, 280);
-            this.lblHour.Name = "lblHour";
-            this.lblHour.Size = new System.Drawing.Size(153, 39);
-            this.lblHour.TabIndex = 1;
-            this.lblHour.Text = "00:00:00";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo_no_bg_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(296, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 199);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // timerHour
-            // 
-            this.timerHour.Interval = 950;
-            this.timerHour.Tick += new System.EventHandler(this.timerHour_Tick);
+            this.lblHistorico.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblHistorico.Location = new System.Drawing.Point(0, 35);
+            this.lblHistorico.Name = "lblHistorico";
+            this.lblHistorico.Size = new System.Drawing.Size(220, 35);
+            this.lblHistorico.TabIndex = 4;
+            this.lblHistorico.Text = "Histórico";
+            this.lblHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHistorico.Click += new System.EventHandler(this.lblHistorico_Click);
+            this.lblHistorico.MouseEnter += new System.EventHandler(this.lblHistorico_MouseEnter);
+            this.lblHistorico.MouseLeave += new System.EventHandler(this.lblHistorico_MouseLeave);
             // 
             // MainScreen
             // 
@@ -405,15 +450,16 @@
             this.panelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButton1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbFormIcon)).EndInit();
             this.panelMainForms.ResumeLayout(false);
             this.panelMainForms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbFormIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.pnlDropDown.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -441,5 +487,8 @@
         private System.Windows.Forms.Timer timerHour;
         private System.Windows.Forms.Label label1;
         private Syncfusion.Windows.Forms.Tools.ToggleButton toggleButton1;
+        private System.Windows.Forms.Panel pnlDropDown;
+        private System.Windows.Forms.Label lblHistorico;
+        private System.Windows.Forms.Label lblAgendamentos;
     }
 }
