@@ -86,13 +86,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(12, 539);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.Size = new System.Drawing.Size(109, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Dark Mode";
+            this.label1.Text = "Modo Escuro";
             // 
             // toggleButton1
             // 
@@ -114,8 +114,8 @@
             this.toggleButton1.ThemeStyle.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.toggleButton1.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.toggleButton1.ThemeStyle.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleButton1.ToggleStateChanged += new Syncfusion.Windows.Forms.Tools.ToggleStateChangedEventHandler(this.toggleButton1_ToggleStateChanged);
             this.toggleButton1.Click += new System.EventHandler(this.toggleButton1_Click);
-            this.toggleButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.toggleButton1_MouseClick);
             // 
             // panelLeftBtn
             // 
@@ -336,7 +336,7 @@
             // 
             // panelMainForms
             // 
-            this.panelMainForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(96)))), ((int)(((byte)(111)))));
+            this.panelMainForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panelMainForms.Controls.Add(this.lblDate);
             this.panelMainForms.Controls.Add(this.lblHour);
             this.panelMainForms.Controls.Add(this.pictureBox1);
