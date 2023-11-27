@@ -36,9 +36,6 @@ namespace interdisciplinar2
                 toggleButton1.ToggleState = ToggleButtonState.Active;
 
             this.DoubleBuffered = true;
-
-            lblHour.Text = DateTime.Now.ToString("HH:mm");
-            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void OpenChildForm(Form childForm)
@@ -79,6 +76,11 @@ namespace interdisciplinar2
 
         private void UnclickBtn()
         {
+            if (pnlDropDown.Visible == true)
+            {
+                pnlDropDown.Visible = false;
+            }
+
             if (ibAgendamentos.TextImageRelation == TextImageRelation.TextBeforeImage)
             {
                 ibAgendamentos.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -120,7 +122,7 @@ namespace interdisciplinar2
 
         private void lblExit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void lblExit_MouseLeave(object sender, EventArgs e)
@@ -296,24 +298,20 @@ namespace interdisciplinar2
             }
         }
 
-        private void timerHour_Tick(object sender, EventArgs e)
-        {
-            lblHour.Text = DateTime.Now.ToString("HH:mm:ss");
-            lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
         private void MainScreen_Load(object sender, EventArgs e)
         {
             if (ThemeController.GetTheme() == "light")
             {
                 panelMainForms.BackColor = RgbLightColors.backColor;
             }
-
-            timerHour.Start();
         }
 
         private void toggleButton1_Click(object sender, EventArgs e)
         {
+            timerToggleButton.Start();
+
+            toggleButton1.Enabled = false;
+
             System.Threading.Timer timer = new System.Threading.Timer(state =>
             {
                 if (toggleButton1.ToggleState != ToggleButtonState.Active)
@@ -325,9 +323,9 @@ namespace interdisciplinar2
                         CurrentChildForm.BackColor = RgbLightColors.backColor;
                     }
 
-                    pictureBox1.Image = Properties.Resources.barber_logo_no_bg_removebg_preview_transformed;
-
                     panelMainForms.BackColor = Color.White;
+
+                    clock1.BorderColor = Color.Black;
                 }
                 else if (toggleButton1.ToggleState != ToggleButtonState.Inactive)
                 {
@@ -338,11 +336,11 @@ namespace interdisciplinar2
                         CurrentChildForm.BackColor = Color.FromArgb(40, 40, 40);
                     }
 
-                    pictureBox1.Image = Properties.Resources.barber_logo_no_bg_removebg_preview;
-
                     panelMainForms.BackColor = Color.FromArgb(40, 40, 40);
+
+                    clock1.BorderColor = Color.White;
                 }
-            }, null, 0, 300);
+            }, null, 0, 100);
         }
 
         private void toggleButton1_ToggleStateChanged(object sender, ToggleStateChangedEventArgs e)
@@ -398,6 +396,13 @@ namespace interdisciplinar2
             pnlDropDown.Visible = false;
 
             lblFormName.Text = "Histórico";
+        }
+
+        private void timerToggleButton_Tick(object sender, EventArgs e)
+        {
+            toggleButton1.Enabled = true;
+
+            timerToggleButton.Stop();
         }
     }
 }
