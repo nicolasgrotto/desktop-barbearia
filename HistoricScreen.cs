@@ -25,11 +25,11 @@ namespace interdisciplinar2
 
         private void carregarBanco() 
         {
-            string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=";
+            string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=jhon";
             MySqlConnection conexaoMysql = new MySqlConnection(conexao);
             conexaoMysql.Open();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select nome,cortes,datahora from tb_agendamento inner join tb_clientes on tb_agendamento.id=tb_clientes.id_agendamento",conexaoMysql);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora < now()-1", conexaoMysql);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvHistorico.DataSource = dt;

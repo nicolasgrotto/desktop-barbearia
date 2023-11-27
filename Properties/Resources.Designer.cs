@@ -153,9 +153,29 @@ namespace interdisciplinar2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Marca_do_bruno_com_alterações_ {
+            get {
+                object obj = ResourceManager.GetObject("Marca do bruno com alterações ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap show_password_icon_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("show-password-icon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sorte {
+            get {
+                object obj = ResourceManager.GetObject("sorte", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
