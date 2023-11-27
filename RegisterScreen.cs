@@ -44,7 +44,7 @@ namespace interdisciplinar2
 
 
                     MySqlCommand comando = new MySqlCommand("insert into tb_agendamento(cortes,datahora) values('" + txtCorte.Text + "','"+ txtData.Text+ "');", conexaoMysql);
-                    MySqlCommand addnome = new MySqlCommand("insert into tb_clientes(nome) values('" + txtNome.Text + "');", conexaoMysql);
+                    MySqlCommand addnome = new MySqlCommand("insert into tb_clientes(nome,email,senha_cliente,telefone) values('" + txtNome.Text + "');", conexaoMysql);
                     addnome.ExecuteNonQuery(); 
                     comando.ExecuteNonQuery();
 

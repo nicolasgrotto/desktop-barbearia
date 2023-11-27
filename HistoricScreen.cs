@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace interdisciplinar2
 {
@@ -15,6 +16,23 @@ namespace interdisciplinar2
         public HistoricScreen()
         {
             InitializeComponent();
+        }
+
+        private void HistoricScreen_Load(object sender, EventArgs e)
+        {
+            carregarBanco();
+        }
+
+        private void carregarBanco() 
+        {
+            string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=";
+            MySqlConnection conexaoMysql = new MySqlConnection(conexao);
+            conexaoMysql.Open();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter("select nome,cortes,datahora from tb_agendamento inner join tb_clientes on tb_agendamento.id=tb_clientes.id_agendamento",conexaoMysql);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgvHistorico.DataSource = dt;
         }
     }
 }
