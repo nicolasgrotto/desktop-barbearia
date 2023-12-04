@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,22 @@ namespace interdisciplinar2.Models
 {
     public static class ThemeController
     {
+        public static readonly Color LightThemeBackColor;
+        public static readonly Color LightThemeForeColor;
+        public static readonly Color LightThemeItemBackColor;
+        public static readonly Color LightThemeBtnBackColor;
+        public static readonly Color DarkThemeBackColor;
+
+        static ThemeController()
+        {
+            LightThemeBackColor = Color.FromArgb(255, 255, 255);
+            LightThemeForeColor = Color.FromArgb(0, 0, 0);
+            LightThemeItemBackColor = Color.WhiteSmoke;
+            LightThemeBtnBackColor = Color.FromArgb(215, 215, 215);
+
+            DarkThemeBackColor = Color.FromArgb(40, 40, 40);
+        }
+
         public static void SetTheme(string theme)
         {
             string themeFile = "C:\\Users\\nickg\\source\\repos\\interdisciplinar2\\ThemeFile\\Theme.txt";

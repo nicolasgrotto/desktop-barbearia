@@ -25,12 +25,6 @@ namespace interdisciplinar2
             int nHeightEllipse
         );
 
-        public struct RgbLightColors
-        {
-            public static Color backColor = Color.FromArgb(255, 255, 255);
-            public static Color textColor = Color.FromArgb(0, 0, 0);
-        }
-
         public SplashScreen()
         {
             InitializeComponent();
@@ -81,12 +75,12 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                this.BackColor = RgbLightColors.backColor;
-                label1.ForeColor = RgbLightColors.textColor;
+                this.BackColor = ThemeController.LightThemeBackColor;
+                label1.ForeColor = ThemeController.LightThemeForeColor;
 
-                progressBar.BackColor = RgbLightColors.backColor;
-                progressBar.InnerColor = RgbLightColors.backColor;
-                progressBar.ForeColor = RgbLightColors.textColor;
+                progressBar.BackColor = ThemeController.LightThemeBackColor;
+                progressBar.InnerColor = ThemeController.LightThemeBackColor;
+                progressBar.ForeColor = ThemeController.LightThemeForeColor;
             }
         }
     }

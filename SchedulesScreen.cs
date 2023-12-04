@@ -23,13 +23,13 @@ namespace interdisciplinar2
             carregarBanco();
         }
 
-        private void carregarBanco() 
+        private void carregarBanco()
         {
-            string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=jhon";
+            string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
             MySqlConnection conexaoMysql = new MySqlConnection(conexao);
             conexaoMysql.Open();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora > now()+1;", conexaoMysql);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora > now()+1;", conexaoMysql);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvSchedules.DataSource = dt;
@@ -40,38 +40,37 @@ namespace interdisciplinar2
             tituloSelecionado.Text = cbHistorico.Text;
             if (cbHistorico.SelectedIndex == 0)
             {
-                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=jhon";
+                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
                 conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where WEEK (datahora) = WEEK( current_date ) - 1 AND YEAR( datahora) = YEAR( current_date );", conexaoMysql);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where WEEK (datahora) = WEEK( current_date ) - 1 AND YEAR( datahora) = YEAR( current_date );", conexaoMysql);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvSchedules.DataSource = dt;
             }
             else if (cbHistorico.SelectedIndex == 1)
             {
-                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=jhon";
+                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
                 conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("  select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora < now() -30 ", conexaoMysql);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("  select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < now() -30 ", conexaoMysql);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvSchedules.DataSource = dt;
             }
             else if (cbHistorico.SelectedIndex == 2)
             {
-                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=jhon";
+                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
                 conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("  select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora = current_date(); ", conexaoMysql);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("  select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora = current_date(); ", conexaoMysql);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvSchedules.DataSource = dt;
             }
-
         }
     }
 }

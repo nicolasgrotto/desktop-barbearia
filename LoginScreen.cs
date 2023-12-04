@@ -13,20 +13,6 @@ namespace interdisciplinar2
 {
     public partial class LoginScreen : Form
     {
-        public struct RgbLightColors
-        {
-            public static Color backColor = Color.FromArgb(255, 255, 255);
-            public static Color textColor = Color.FromArgb(0, 0, 0);
-            public static Color btnBackColor = Color.FromArgb(215, 215, 215);
-        }
-
-        public struct RgbDarkColors
-        {
-            public static Color backColor = Color.FromArgb(40, 40, 40);
-            public static Color textColor = Color.FromArgb(255, 255, 255);
-            public static Color btnBackColor = Color.FromArgb(40, 40, 40);
-        }
-
         public LoginScreen()
         {
             InitializeComponent();
@@ -55,7 +41,7 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                txtbName.ForeColor = RgbLightColors.textColor;
+                txtbName.ForeColor = ThemeController.LightThemeForeColor;
             }
             else
             {
@@ -72,7 +58,7 @@ namespace interdisciplinar2
 
             if (ThemeController.GetTheme() == "light")
             {
-                txtbPassword.ForeColor = RgbLightColors.textColor;
+                txtbPassword.ForeColor = ThemeController.LightThemeForeColor;
             }
             else
             {
@@ -117,8 +103,8 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                btnLogin.BackColor = RgbLightColors.btnBackColor;
-                btnLogin.ForeColor = RgbLightColors.textColor;
+                btnLogin.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnLogin.ForeColor = ThemeController.LightThemeForeColor;
             }
             else
             {
@@ -260,22 +246,22 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                this.BackColor = RgbLightColors.backColor;
+                this.BackColor = ThemeController.LightThemeBackColor;
 
-                btnLogin.BackColor = RgbLightColors.btnBackColor;
-                btnLogin.ForeColor = RgbLightColors.textColor;
+                btnLogin.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnLogin.ForeColor = ThemeController.LightThemeForeColor;
 
-                label1.ForeColor = RgbLightColors.textColor;
-                label2.ForeColor = RgbLightColors.textColor;
-                label3.ForeColor = RgbLightColors.textColor;
+                label1.ForeColor = ThemeController.LightThemeForeColor;
+                label2.ForeColor = ThemeController.LightThemeForeColor;
+                label3.ForeColor = ThemeController.LightThemeForeColor;
 
-                panel1.BackColor = RgbLightColors.textColor;
-                panel2.BackColor = RgbLightColors.textColor;
+                panel1.BackColor = ThemeController.LightThemeForeColor;
+                panel2.BackColor = ThemeController.LightThemeForeColor;
 
-                txtbName.BackColor = RgbLightColors.backColor;
-                txtbName.ForeColor = RgbLightColors.textColor;
-                txtbPassword.BackColor = RgbLightColors.backColor;
-                txtbPassword.ForeColor = RgbLightColors.textColor;
+                txtbName.BackColor = ThemeController.LightThemeBackColor;
+                txtbName.ForeColor = ThemeController.LightThemeForeColor;
+                txtbPassword.BackColor = ThemeController.LightThemeBackColor;
+                txtbPassword.ForeColor = ThemeController.LightThemeForeColor;
 
                 pictureBox2.Image = Properties.Resources.dark_human_icon;
                 pictureBox3.Image = Properties.Resources.dark_lock_solid;

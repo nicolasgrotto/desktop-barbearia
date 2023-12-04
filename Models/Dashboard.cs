@@ -30,33 +30,33 @@ namespace interdisciplinar2.Models
 
         private void GetNumberOfSchedules()
         {
-            //try
-            //{
-            using (var connection = GetConnection())
+            try
             {
-                connection.Open();
-
-                using (MySqlCommand command = new MySqlCommand())
+                using (var connection = GetConnection())
                 {
-                    command.Connection = connection;
+                    connection.Open();
 
-                    command.CommandText = @"SELECT COUNT(id_agendamento) FROM tb_agendamentos WHERE datahora BETWEEN @fromDate AND @toDate;";
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
+                        command.Connection = connection;
 
-                    command.Parameters.Add("@fromDate", MySqlDbType.DateTime).Value = startDate;
-                    command.Parameters.Add("@toDate", MySqlDbType.DateTime).Value = endDate;
+                        command.CommandText = @"SELECT COUNT(id_agendamento) FROM tb_agendamentos WHERE datahora BETWEEN @fromDate AND @toDate;";
 
-                    numberOfSchedules = int.Parse(command.ExecuteScalar().ToString());
+                        command.Parameters.Add("@fromDate", MySqlDbType.DateTime).Value = startDate;
+                        command.Parameters.Add("@toDate", MySqlDbType.DateTime).Value = endDate;
 
-                    command.CommandText = "SELECT nome FROM tb_clientes INNER JOIN tb_agendamentos ON tb_clientes.id_cliente = tb_agendamentos.id_cliente GROUP BY nome;";
+                        numberOfSchedules = int.Parse(command.ExecuteScalar().ToString());
 
-                    ClientWithMostSchedules = (string)command.ExecuteScalar();
+                        command.CommandText = "SELECT nome FROM tb_clientes INNER JOIN tb_agendamentos ON tb_clientes.id_cliente = tb_agendamentos.id_cliente GROUP BY nome;";
+
+                        ClientWithMostSchedules = (string)command.ExecuteScalar();
+                    }
                 }
             }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void GetResultGraphic()
@@ -64,68 +64,86 @@ namespace interdisciplinar2.Models
             RevenueByDateList = new List<RevenueByDate>();
             totalRevenue = 0;
 
-            //try
-            //{
-            using (var connection = GetConnection())
+            try
             {
-                connection.Open();
-
-                using (var command = new MySqlCommand())
+                using (var connection = GetConnection())
                 {
-                    command.Connection = connection;
+                    connection.Open();
 
-                    command.CommandText = @"SELECT datahora, COUNT(id_agendamento) FROM tb_agendamentos WHERE datahora BETWEEN @fromDate AND @toDate  GROUP BY datahora;";
-
-                    command.Parameters.Add("@fromDate", MySqlDbType.DateTime).Value = startDate;
-                    command.Parameters.Add("@toDate", MySqlDbType.DateTime).Value = endDate;
-
-                    MySqlDataReader reader = command.ExecuteReader();
-
-                    var resultTable = new List<KeyValuePair<DateTime, decimal>>();
-
-                    while (reader.Read())
+                    using (var command = new MySqlCommand())
                     {
-                        resultTable.Add(new KeyValuePair<DateTime, decimal>(reader.GetDateTime(0), reader.GetDecimal(1)));
-                        totalRevenue += reader.GetDecimal(1) * 20;
-                    }
-                    reader.Close();
+                        command.Connection = connection;
 
-                    if (numberOfDays < 30)
-                    {
-                        foreach (var item in resultTable)
+                        command.CommandText = @"SELECT datahora, COUNT(id_agendamento) FROM tb_agendamentos WHERE datahora BETWEEN @fromDate AND @toDate  GROUP BY datahora;";
+
+                        command.Parameters.Add("@fromDate", MySqlDbType.DateTime).Value = startDate;
+                        command.Parameters.Add("@toDate", MySqlDbType.DateTime).Value = endDate;
+
+                        MySqlDataReader reader = command.ExecuteReader();
+
+                        var resultTable = new List<KeyValuePair<DateTime, decimal>>();
+
+                        while (reader.Read())
                         {
-                            RevenueByDateList.Add(new RevenueByDate() { Date = item.Key.ToString("dd MMM"), totalAmount = item.Value * 20 });
+                            resultTable.Add(new KeyValuePair<DateTime, decimal>(reader.GetDateTime(0), reader.GetDecimal(1)));
+                            totalRevenue += reader.GetDecimal(1) * 20;
                         }
-                    }
-                    else if (numberOfDays < 92)
-                    {
-                        RevenueByDateList = (from list in resultTable
-                                             group list by CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(list.Key, CalendarWeekRule.FirstDay, DayOfWeek.Monday) into grouped
-                                             select new RevenueByDate()
-                                             {
-                                                 Date = "Semana " + grouped.Key.ToString(),
-                                                 totalAmount = grouped.Sum(amount => amount.Value) * 20
-                                             }).ToList();
-                    }
-                    else if (numberOfDays < (365 * 2))
-                    {
-                        bool isYear = numberOfDays > 365 ? true : false;
+                        reader.Close();
 
-                        RevenueByDateList = (from list in resultTable
-                                             group list by list.Key.ToString("MMM yyyy") into grouped
-                                             select new RevenueByDate()
-                                             {
-                                                 Date = isYear ? grouped.Key.Substring(0, grouped.Key.IndexOf(" ")) : grouped.Key,
-                                                 totalAmount = grouped.Sum(amount => amount.Value) * 20
-                                             }).ToList();
+                        if (numberOfDays < 1)
+                        {
+                            RevenueByDateList = (from list in resultTable
+                                                 group list by list.Key.ToString("HH:MM") into grouped
+                                                 select new RevenueByDate()
+                                                 {
+                                                     Date = grouped.Key + "h",
+                                                     totalAmount = grouped.Sum(amount => amount.Value) * 20
+                                                 }).ToList();
+                        }
+                        else if (numberOfDays < 30)
+                        {
+                            RevenueByDateList = (from list in resultTable
+                                                 group list by list.Key.ToString("dd MMM") into grouped
+                                                 select new RevenueByDate()
+                                                 {
+                                                     Date = grouped.Key,
+                                                     totalAmount = grouped.Sum(amount => amount.Value) * 20
+                                                 }).ToList();
+
+                            //foreach (var item in resultTable)
+                            //{
+                            //    RevenueByDateList.Add(new RevenueByDate() { Date = item.Key.ToString("dd MMM"), totalAmount = item.Value * 20 });
+                            //}
+                        }
+                        else if (numberOfDays < 92)
+                        {
+                            RevenueByDateList = (from list in resultTable
+                                                 group list by CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(list.Key, CalendarWeekRule.FirstDay, DayOfWeek.Monday) into grouped
+                                                 select new RevenueByDate()
+                                                 {
+                                                     Date = "Semana " + grouped.Key.ToString(),
+                                                     totalAmount = grouped.Sum(amount => amount.Value) * 20
+                                                 }).ToList();
+                        }
+                        else if (numberOfDays < (365 * 2))
+                        {
+                            bool isYear = numberOfDays > 365 ? true : false;
+
+                            RevenueByDateList = (from list in resultTable
+                                                 group list by list.Key.ToString("MMM yyyy") into grouped
+                                                 select new RevenueByDate()
+                                                 {
+                                                     Date = isYear ? grouped.Key.Substring(0, grouped.Key.IndexOf(" ")) : grouped.Key,
+                                                     totalAmount = grouped.Sum(amount => amount.Value) * 20
+                                                 }).ToList();
+                        }
                     }
                 }
             }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public bool LoadData(DateTime startDate, DateTime endDate)

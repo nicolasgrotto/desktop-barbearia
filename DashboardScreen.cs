@@ -1,12 +1,6 @@
 ﻿using interdisciplinar2.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace interdisciplinar2
@@ -31,10 +25,10 @@ namespace interdisciplinar2
         {
             var data = dashboard.LoadData(dtpStartDate.Value, dtpEndDate.Value);
 
-            if (data == true)
+            if (data)
             {
                 lblTotalSchedules.Text = dashboard.numberOfSchedules.ToString();
-                lblTotalRevenue.Text = dashboard.totalRevenue.ToString();
+                lblTotalRevenue.Text = "R$" + dashboard.totalRevenue.ToString();
                 lblName.Text = dashboard.ClientWithMostSchedules;
 
                 chart.DataSource = dashboard.RevenueByDateList;
@@ -49,36 +43,66 @@ namespace interdisciplinar2
             dtpStartDate.Visible = false;
             dtpEndDate.Visible = false;
             btnOk.Visible = false;
+            label1.Visible = false;
+        }
+
+        private void ReturnButtonToNormalColor(Button btn)
+        {
+            if (ThemeController.GetTheme() == "light")
+            {
+                btn.BackColor = ThemeController.LightThemeBtnBackColor;
+                btn.ForeColor = ThemeController.LightThemeForeColor;
+            }
+            else
+            {
+                btn.BackColor = Color.Transparent;
+                btn.ForeColor = Color.FromName("ControlLightLight");
+            }
+        }
+
+        private void ButtonGetDate()
+        {
+            DisableCustomDate();
+
+            dtpStartDate.Value = DateTime.Today;
+            dtpEndDate.Value = DateTime.Now;
+
+            LoadFormData();
+        }
+
+        private void ButtonGetDate(int days)
+        {
+            DisableCustomDate();
+
+            dtpStartDate.Value = DateTime.Today.AddDays(-days);
+            dtpEndDate.Value = DateTime.Now;
+
+            LoadFormData();
         }
 
         private void btnLast30Days_MouseLeave(object sender, EventArgs e)
         {
-            btnLast30Days.BackColor = Color.Transparent;
+            ReturnButtonToNormalColor(btnLast30Days);
         }
 
         private void btnLast7Days_MouseLeave(object sender, EventArgs e)
         {
-            btnLast7Days.BackColor = Color.Transparent;
+            ReturnButtonToNormalColor(btnLast7Days);
         }
 
         private void btnToday_MouseLeave(object sender, EventArgs e)
         {
-            btnToday.BackColor = Color.Transparent;
+            ReturnButtonToNormalColor(btnToday);
         }
 
         private void btnCustom_MouseLeave(object sender, EventArgs e)
         {
-            btnCustom.BackColor = Color.Transparent;
+            ReturnButtonToNormalColor(btnCustom);
         }
 
         private void btnOk_MouseLeave(object sender, EventArgs e)
         {
-            btnOk.BackColor = Color.Transparent;
-        }
-
-        private void btnThisMonth_MouseEnter(object sender, EventArgs e)
-        {
-            btnThisMonth.BackColor = Color.FromArgb(225, 177, 44);
+            ReturnButtonToNormalColor(btnOk);
         }
 
         private void btnLast30Days_MouseEnter(object sender, EventArgs e)
@@ -108,42 +132,25 @@ namespace interdisciplinar2
 
         private void btnToday_Click(object sender, EventArgs e)
         {
-            DisableCustomDate();
+            ButtonGetDate();
 
-            dtpStartDate.Value = DateTime.Today;
-            dtpEndDate.Value = DateTime.Now;
-
-            LoadFormData();
+            chart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
         }
 
         private void btnLast7Days_Click(object sender, EventArgs e)
         {
-            DisableCustomDate();
+            if (chart.Series[0].ChartType != System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea)
+                chart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
 
-            dtpStartDate.Value = DateTime.Today.AddDays(-7);
-            dtpEndDate.Value = DateTime.Now;
-
-            LoadFormData();
+            ButtonGetDate(7);
         }
 
         private void btnLast30Days_Click(object sender, EventArgs e)
         {
-            DisableCustomDate();
+            if (chart.Series[0].ChartType != System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea)
+                chart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
 
-            dtpStartDate.Value = DateTime.Today.AddDays(-30);
-            dtpEndDate.Value = DateTime.Now;
-
-            LoadFormData();
-        }
-
-        private void btnThisMonth_Click(object sender, EventArgs e)
-        {
-            DisableCustomDate();
-
-            dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            dtpEndDate.Value = DateTime.Now;
-
-            LoadFormData();
+            ButtonGetDate(30);
         }
 
         private void btnCustom_Click(object sender, EventArgs e)
@@ -151,18 +158,64 @@ namespace interdisciplinar2
             dtpEndDate.Visible = true;
             dtpStartDate.Visible = true;
             btnOk.Visible = true;
+            label1.Visible = true;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            DisableCustomDate();
+            if (dtpEndDate.Value > DateTime.Now)
+            {
+                dtpEndDate.Value = DateTime.Now;
+            }
 
+            if (chart.Series[0].ChartType != System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea)
+                chart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+
+            DisableCustomDate();
             LoadFormData();
         }
 
-        private void btnThisMonth_MouseLeave(object sender, EventArgs e)
+        private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            btnThisMonth.BackColor = Color.Transparent;
+            if (ThemeController.GetTheme() == "light")
+            {
+                pnlTotalSchedules.BackColor = ThemeController.LightThemeItemBackColor;
+                panel1.BackColor = ThemeController.LightThemeItemBackColor;
+                panel2.BackColor = ThemeController.LightThemeItemBackColor;
+
+                chart.BackColor = ThemeController.LightThemeItemBackColor;
+                chart.Legends[0].BackColor = ThemeController.LightThemeItemBackColor;
+                chart.Legends[0].ForeColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].AxisX.MajorGrid.LineColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].AxisY.MajorGrid.LineColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].AxisY.LineColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].AxisX.LineColor = ThemeController.LightThemeForeColor;
+                chart.ChartAreas[0].BackColor = ThemeController.LightThemeBackColor;
+
+                lblTotalSchedules.ForeColor = ThemeController.LightThemeForeColor;
+                lblTotalRevenue.ForeColor = ThemeController.LightThemeForeColor;
+                lblName.ForeColor = ThemeController.LightThemeForeColor;
+
+                btnToday.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnLast7Days.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnLast30Days.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnCustom.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnOk.BackColor = ThemeController.LightThemeBtnBackColor;
+
+                btnToday.ForeColor = ThemeController.LightThemeForeColor;
+                btnLast7Days.ForeColor = ThemeController.LightThemeForeColor;
+                btnLast30Days.ForeColor = ThemeController.LightThemeForeColor;
+                btnCustom.ForeColor = ThemeController.LightThemeForeColor;
+                btnOk.ForeColor = ThemeController.LightThemeForeColor;
+
+                label1.ForeColor = ThemeController.LightThemeForeColor;
+
+                iconPictureBox1.IconColor = Color.Black;
+                iconPictureBox2.IconColor = Color.Black;
+                iconPictureBox3.IconColor = Color.Black;
+            }
         }
     }
 }

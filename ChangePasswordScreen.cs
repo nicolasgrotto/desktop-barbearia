@@ -8,13 +8,6 @@ namespace interdisciplinar2
 {
     public partial class ChangePasswordScreen : Form
     {
-        private struct RgbLightColors
-        {
-            public static Color backColor = Color.FromArgb(255, 255, 255);
-            public static Color textColor = Color.FromArgb(0, 0, 0);
-            public static Color btnBackColor = Color.FromArgb(215, 215, 215);
-        }
-
         public ChangePasswordScreen()
         {
             InitializeComponent();
@@ -24,21 +17,21 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                label1.ForeColor = RgbLightColors.textColor;
-                label2.ForeColor = RgbLightColors.textColor;
-                label3.ForeColor = RgbLightColors.textColor;
+                label1.ForeColor = ThemeController.LightThemeForeColor;
+                label2.ForeColor = ThemeController.LightThemeForeColor;
+                label3.ForeColor = ThemeController.LightThemeForeColor;
 
-                txtbPassword.ForeColor = RgbLightColors.textColor;
-                txtbPassword.BackColor = RgbLightColors.backColor;
+                txtbPassword.ForeColor = ThemeController.LightThemeForeColor;
+                txtbPassword.BackColor = ThemeController.LightThemeBackColor;
 
-                txtbConfirmPassword.ForeColor = RgbLightColors.textColor;
-                txtbConfirmPassword.BackColor = RgbLightColors.backColor;
+                txtbConfirmPassword.ForeColor = ThemeController.LightThemeForeColor;
+                txtbConfirmPassword.BackColor = ThemeController.LightThemeBackColor;
 
-                txtbNewPassword.ForeColor = RgbLightColors.textColor;
-                txtbNewPassword.BackColor = RgbLightColors.backColor;
+                txtbNewPassword.ForeColor = ThemeController.LightThemeForeColor;
+                txtbNewPassword.BackColor = ThemeController.LightThemeBackColor;
 
-                btnChangePassword.BackColor = RgbLightColors.btnBackColor;
-                btnChangePassword.ForeColor = RgbLightColors.textColor;
+                btnChangePassword.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnChangePassword.ForeColor = ThemeController.LightThemeForeColor;
             }
         }
 
@@ -51,13 +44,13 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                btnChangePassword.BackColor = RgbLightColors.btnBackColor;
-                btnChangePassword.ForeColor = RgbLightColors.textColor;
+                btnChangePassword.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnChangePassword.ForeColor = ThemeController.LightThemeForeColor;
             }
             else
             {
                 btnChangePassword.FlatAppearance.BorderColor = Color.FromArgb(225, 177, 44);
-                btnChangePassword.BackColor = Color.FromArgb(40, 40, 40);
+                btnChangePassword.BackColor = ThemeController.DarkThemeBackColor;
                 btnChangePassword.ForeColor = Color.FromName("ControlLightLight");
             }
         }

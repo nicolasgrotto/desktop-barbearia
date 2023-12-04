@@ -22,12 +22,6 @@ namespace interdisciplinar2
             public static readonly Color color6 = Color.FromArgb(24, 161, 251);
         }
 
-        private struct RgbLightColors
-        {
-            public static Color backColor = Color.FromArgb(255, 255, 255);
-            public static Color textColor = Color.FromArgb(0, 0, 0);
-        }
-
         public MainScreen()
         {
             InitializeComponent();
@@ -49,7 +43,7 @@ namespace interdisciplinar2
 
             if (ThemeController.GetTheme() == "light")
             {
-                childForm.BackColor = RgbLightColors.backColor;
+                childForm.BackColor = ThemeController.LightThemeBackColor;
             }
 
             childForm.TopLevel = false;
@@ -79,18 +73,21 @@ namespace interdisciplinar2
             if (pnlDropDown.Visible == true)
             {
                 pnlDropDown.Visible = false;
+
+                ibDashboard.Dock = DockStyle.Top;
+                ibAlterarSenha.Dock = DockStyle.Top;
             }
 
-            if (ibAgendamentos.TextImageRelation == TextImageRelation.TextBeforeImage)
+            if (ibAgendar.TextImageRelation == TextImageRelation.TextBeforeImage)
+            {
+                ibAgendar.TextImageRelation = TextImageRelation.ImageBeforeText;
+                ibAgendar.IconColor = Color.White;
+                panelLeftBtn.Visible = false;
+            }
+            else if (ibAgendamentos.TextImageRelation == TextImageRelation.TextBeforeImage)
             {
                 ibAgendamentos.TextImageRelation = TextImageRelation.ImageBeforeText;
                 ibAgendamentos.IconColor = Color.White;
-                panelLeftBtn.Visible = false;
-            }
-            else if (ibHistorico.TextImageRelation == TextImageRelation.TextBeforeImage)
-            {
-                ibHistorico.TextImageRelation = TextImageRelation.ImageBeforeText;
-                ibHistorico.IconColor = Color.White;
                 panelLeftBtn.Visible = false;
             }
             else if (ibDashboard.TextImageRelation == TextImageRelation.TextBeforeImage)
@@ -140,6 +137,27 @@ namespace interdisciplinar2
             btn.BackColor = RgbColors.color2;
         }
 
+        private void ibAgendar_Click(object sender, EventArgs e)
+        {
+            panelLeftBtn.BackColor = RgbColors.color1;
+            ClickedBtn(ibAgendar);
+            ibAgendar.IconColor = RgbColors.color1;
+
+            OpenChildForm(new AgendamentosScreen());
+
+            IconFormName(ibAgendar);
+        }
+
+        private void ibAgendar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnMouseEnter(ibAgendar);
+        }
+
+        private void ibAgendar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnMouseLeave(ibAgendar);
+        }
+
         private void ibAgendamentos_MouseEnter(object sender, EventArgs e)
         {
             BtnMouseEnter(ibAgendamentos);
@@ -150,14 +168,22 @@ namespace interdisciplinar2
             BtnMouseLeave(ibAgendamentos);
         }
 
-        private void ibHistorico_MouseEnter(object sender, EventArgs e)
+        private void ibAgendamentos_Click(object sender, EventArgs e)
         {
-            BtnMouseEnter(ibHistorico);
-        }
+            panelLeftBtn.BackColor = RgbColors.color4;
+            ClickedBtn(ibAgendamentos);
+            ibAgendamentos.IconColor = RgbColors.color4;
 
-        private void ibHistorico_MouseLeave(object sender, EventArgs e)
-        {
-            BtnMouseLeave(ibHistorico);
+            pnlDropDown.Visible = true;
+            pnlDropDown.Location = new Point(0, ibAgendamentos.Location.Y + 50);
+
+            ibDashboard.Dock = DockStyle.None;
+            ibAlterarSenha.Dock = DockStyle.None;
+
+            ibDashboard.Location = new Point(0, pnlDropDown.Location.Y + 70);
+            ibAlterarSenha.Location = new Point(0, ibDashboard.Location.Y + 70);
+
+            IconFormName(ibAgendamentos);
         }
 
         private void ibDashboard_MouseEnter(object sender, EventArgs e)
@@ -180,17 +206,6 @@ namespace interdisciplinar2
             BtnMouseLeave(ibAlterarSenha);
         }
 
-        private void ibAgendamentos_Click(object sender, EventArgs e)
-        {
-            panelLeftBtn.BackColor = RgbColors.color1;
-            ClickedBtn(ibAgendamentos);
-            ibAgendamentos.IconColor = RgbColors.color1;
-
-            OpenChildForm(new AgendamentosScreen());
-
-            IconFormName(ibAgendamentos);
-        }
-
         private void logo_Click(object sender, EventArgs e)
         {
             if (CurrentChildForm != null)
@@ -206,18 +221,6 @@ namespace interdisciplinar2
             ipbFormIcon.IconColor = Color.White;
 
             lblFormName.Text = "Home";
-        }
-
-        private void ibHistorico_Click(object sender, EventArgs e)
-        {
-            panelLeftBtn.BackColor = RgbColors.color4;
-            ClickedBtn(ibHistorico);
-            ibHistorico.IconColor = RgbColors.color4;
-
-            pnlDropDown.Visible = true;
-            pnlDropDown.Location = new Point(0, ibHistorico.Location.Y + 50);
-
-            IconFormName(ibHistorico);
         }
 
         private void ibDashboard_Click(object sender, EventArgs e)
@@ -302,7 +305,7 @@ namespace interdisciplinar2
         {
             if (ThemeController.GetTheme() == "light")
             {
-                panelMainForms.BackColor = RgbLightColors.backColor;
+                panelMainForms.BackColor = ThemeController.LightThemeBackColor;
             }
         }
 
@@ -320,7 +323,7 @@ namespace interdisciplinar2
 
                     if (CurrentChildForm != null)
                     {
-                        CurrentChildForm.BackColor = RgbLightColors.backColor;
+                        CurrentChildForm.BackColor = ThemeController.LightThemeBackColor;
                     }
 
                     panelMainForms.BackColor = Color.White;
@@ -333,10 +336,10 @@ namespace interdisciplinar2
 
                     if (CurrentChildForm != null)
                     {
-                        CurrentChildForm.BackColor = Color.FromArgb(40, 40, 40);
+                        CurrentChildForm.BackColor = ThemeController.DarkThemeBackColor;
                     }
 
-                    panelMainForms.BackColor = Color.FromArgb(40, 40, 40);
+                    panelMainForms.BackColor = ThemeController.DarkThemeBackColor;
 
                     clock1.BorderColor = Color.White;
                 }
@@ -384,7 +387,7 @@ namespace interdisciplinar2
         {
             OpenChildForm(new SchedulesScreen());
 
-            pnlDropDown.Visible = false;
+            UnclickBtn();
 
             lblFormName.Text = "Agendamentos Futuros";
         }
@@ -393,7 +396,7 @@ namespace interdisciplinar2
         {
             OpenChildForm(new HistoricScreen());
 
-            pnlDropDown.Visible = false;
+            UnclickBtn();
 
             lblFormName.Text = "Histórico";
         }

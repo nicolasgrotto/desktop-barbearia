@@ -44,8 +44,8 @@
             this.panelLeftBtn = new System.Windows.Forms.Panel();
             this.ibAlterarSenha = new FontAwesome.Sharp.IconButton();
             this.ibDashboard = new FontAwesome.Sharp.IconButton();
-            this.ibHistorico = new FontAwesome.Sharp.IconButton();
             this.ibAgendamentos = new FontAwesome.Sharp.IconButton();
+            this.ibAgendar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
@@ -55,8 +55,8 @@
             this.ipbFormIcon = new FontAwesome.Sharp.IconPictureBox();
             this.lblExit = new System.Windows.Forms.Label();
             this.panelMainForms = new System.Windows.Forms.Panel();
-            this.timerToggleButton = new System.Windows.Forms.Timer(this.components);
             this.clock1 = new Syncfusion.Windows.Forms.Tools.Clock();
+            this.timerToggleButton = new System.Windows.Forms.Timer(this.components);
             this.panelLeft.SuspendLayout();
             this.pnlDropDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleButton1)).BeginInit();
@@ -78,8 +78,8 @@
             this.panelLeft.Controls.Add(this.panelLeftBtn);
             this.panelLeft.Controls.Add(this.ibAlterarSenha);
             this.panelLeft.Controls.Add(this.ibDashboard);
-            this.panelLeft.Controls.Add(this.ibHistorico);
             this.panelLeft.Controls.Add(this.ibAgendamentos);
+            this.panelLeft.Controls.Add(this.ibAgendar);
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
@@ -215,52 +215,52 @@
             this.ibDashboard.MouseEnter += new System.EventHandler(this.ibDashboard_MouseEnter);
             this.ibDashboard.MouseLeave += new System.EventHandler(this.ibDashboard_MouseLeave);
             // 
-            // ibHistorico
-            // 
-            this.ibHistorico.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibHistorico.FlatAppearance.BorderSize = 0;
-            this.ibHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibHistorico.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibHistorico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibHistorico.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
-            this.ibHistorico.IconColor = System.Drawing.Color.White;
-            this.ibHistorico.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibHistorico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibHistorico.Location = new System.Drawing.Point(0, 258);
-            this.ibHistorico.Name = "ibHistorico";
-            this.ibHistorico.Size = new System.Drawing.Size(220, 58);
-            this.ibHistorico.TabIndex = 1;
-            this.ibHistorico.Text = "Agendamentos";
-            this.ibHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibHistorico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibHistorico.UseVisualStyleBackColor = true;
-            this.ibHistorico.Click += new System.EventHandler(this.ibHistorico_Click);
-            this.ibHistorico.MouseEnter += new System.EventHandler(this.ibHistorico_MouseEnter);
-            this.ibHistorico.MouseLeave += new System.EventHandler(this.ibHistorico_MouseLeave);
-            // 
             // ibAgendamentos
             // 
-            this.ibAgendamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
             this.ibAgendamentos.Dock = System.Windows.Forms.DockStyle.Top;
             this.ibAgendamentos.FlatAppearance.BorderSize = 0;
             this.ibAgendamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibAgendamentos.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibAgendamentos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibAgendamentos.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.ibAgendamentos.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
             this.ibAgendamentos.IconColor = System.Drawing.Color.White;
             this.ibAgendamentos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibAgendamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgendamentos.Location = new System.Drawing.Point(0, 200);
+            this.ibAgendamentos.Location = new System.Drawing.Point(0, 258);
             this.ibAgendamentos.Name = "ibAgendamentos";
             this.ibAgendamentos.Size = new System.Drawing.Size(220, 58);
             this.ibAgendamentos.TabIndex = 1;
             this.ibAgendamentos.Text = "Agendamentos";
             this.ibAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibAgendamentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibAgendamentos.UseVisualStyleBackColor = false;
+            this.ibAgendamentos.UseVisualStyleBackColor = true;
             this.ibAgendamentos.Click += new System.EventHandler(this.ibAgendamentos_Click);
             this.ibAgendamentos.MouseEnter += new System.EventHandler(this.ibAgendamentos_MouseEnter);
             this.ibAgendamentos.MouseLeave += new System.EventHandler(this.ibAgendamentos_MouseLeave);
+            // 
+            // ibAgendar
+            // 
+            this.ibAgendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.ibAgendar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibAgendar.FlatAppearance.BorderSize = 0;
+            this.ibAgendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibAgendar.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibAgendar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibAgendar.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.ibAgendar.IconColor = System.Drawing.Color.White;
+            this.ibAgendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibAgendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibAgendar.Location = new System.Drawing.Point(0, 200);
+            this.ibAgendar.Name = "ibAgendar";
+            this.ibAgendar.Size = new System.Drawing.Size(220, 58);
+            this.ibAgendar.TabIndex = 1;
+            this.ibAgendar.Text = "Agendar";
+            this.ibAgendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibAgendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibAgendar.UseVisualStyleBackColor = false;
+            this.ibAgendar.Click += new System.EventHandler(this.ibAgendar_Click);
+            this.ibAgendar.MouseEnter += new System.EventHandler(this.ibAgendar_MouseEnter);
+            this.ibAgendar.MouseLeave += new System.EventHandler(this.ibAgendar_MouseLeave);
             // 
             // panel1
             // 
@@ -388,11 +388,6 @@
             this.panelMainForms.Size = new System.Drawing.Size(780, 561);
             this.panelMainForms.TabIndex = 2;
             // 
-            // timerToggleButton
-            // 
-            this.timerToggleButton.Interval = 1000;
-            this.timerToggleButton.Tick += new System.EventHandler(this.timerToggleButton_Tick);
-            // 
             // clock1
             // 
             this.clock1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -403,7 +398,7 @@
             this.clock1.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Circle;
             this.clock1.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.clock1.CurrentDateTime = new System.DateTime(2023, 11, 27, 0, 40, 17, 555);
-            this.clock1.CustomTime = new System.DateTime(2023, 11, 27, 0, 40, 17, 555);
+            this.clock1.CustomTime = new System.DateTime(2023, 12, 3, 22, 0, 14, 82);
             this.clock1.DigitalRenderer = digitalClockRenderer1;
             this.clock1.DisplayDates = true;
             this.clock1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
@@ -420,6 +415,11 @@
             this.clock1.StopTimer = false;
             this.clock1.TabIndex = 3;
             this.clock1.Text = "clock1";
+            // 
+            // timerToggleButton
+            // 
+            this.timerToggleButton.Interval = 1000;
+            this.timerToggleButton.Tick += new System.EventHandler(this.timerToggleButton_Tick);
             // 
             // MainScreen
             // 
@@ -457,8 +457,8 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo;
+        private FontAwesome.Sharp.IconButton ibAgendar;
         private FontAwesome.Sharp.IconButton ibAgendamentos;
-        private FontAwesome.Sharp.IconButton ibHistorico;
         private FontAwesome.Sharp.IconButton ibAlterarSenha;
         private FontAwesome.Sharp.IconButton ibDashboard;
         private System.Windows.Forms.Panel panelHeader;
