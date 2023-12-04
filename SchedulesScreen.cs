@@ -44,7 +44,7 @@ namespace interdisciplinar2
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
                 conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where WEEK (datahora) = WEEK( current_date ) - 1 AND YEAR( datahora) = YEAR( current_date );", conexaoMysql);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where week (datahora) = week( current_date ) - 1 and year( datahora) = ( current_date );", conexaoMysql);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvSchedules.DataSource = dt;
@@ -55,7 +55,7 @@ namespace interdisciplinar2
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
                 conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("  select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < now() -30 ", conexaoMysql);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora\r\nfrom tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente \r\nwhere month(datahora) = month(curdate() - interval 1 month)\r\nand year(datahora) = year(curdate() - interval 1 month);\r\n", conexaoMysql);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvSchedules.DataSource = dt;
