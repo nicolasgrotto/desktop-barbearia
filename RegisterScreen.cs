@@ -58,16 +58,5 @@ namespace interdisciplinar2
                 MessageBox.Show("Verifique isso" + ex.Message, "Algo deu errado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            DialogResult caixamensagem = MessageBox.Show("Deseja mesmo voltar a tela de menu", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (caixamensagem == DialogResult.Yes)
-            {
-                MainScreen mainscreen = new MainScreen();
-                mainscreen.Show(); 
-            }
-        }
     }
 }

@@ -66,7 +66,7 @@ namespace interdisciplinar2
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
                 conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("  select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora = ; ", conexaoMysql);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora = current_date(); ", conexaoMysql);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvHistorico.DataSource = dt;
