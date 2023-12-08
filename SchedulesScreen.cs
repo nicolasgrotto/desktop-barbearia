@@ -29,7 +29,7 @@ namespace interdisciplinar2
             MySqlConnection conexaoMysql = new MySqlConnection(conexao);
             conexaoMysql.Open();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamento inner join tb_clientes on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora > now()+1;", conexaoMysql);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("select nome,telefone,mensagem from tb_clientes inner join tb_agendamento on tb_clientes.id_cliente=tb_agendamento.id_cliente where datahora > now();", conexaoMysql);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvSchedules.DataSource = dt;

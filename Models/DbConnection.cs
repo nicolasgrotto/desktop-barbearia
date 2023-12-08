@@ -13,7 +13,7 @@ namespace interdisciplinar2.Models
 
         public DbConnection()
         {
-            _connectionString = "server=localhost;database=db_barbearia;uid=root;pwd=etec;";
+            _connectionString = "server=localhost;database=db_barbearia;uid=root;pwd=jhon;";
         }
 
         protected MySqlConnection GetConnection()

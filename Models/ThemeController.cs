@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.Windows.Forms;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -28,7 +29,7 @@ namespace interdisciplinar2.Models
 
         public static void SetTheme(string theme)
         {
-            string themeFile = "C:\\Users\\nickg\\source\\repos\\interdisciplinar2\\ThemeFile\\Theme.txt";
+            string themeFile = "C:\\Users\\araph\\Source\\Repos\\interdisciplinar-desktop\\ThemeFile\\Theme.txt";
 
             try
             {

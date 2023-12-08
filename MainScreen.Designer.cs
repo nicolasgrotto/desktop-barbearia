@@ -273,11 +273,11 @@
             // 
             // logo
             // 
-            this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logo.Image = global::interdisciplinar2.Properties.Resources.barber_logo_no_bg_removebg_preview;
-            this.logo.Location = new System.Drawing.Point(0, 0);
+            this.logo.Location = new System.Drawing.Point(27, 28);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(220, 200);
+            this.logo.Size = new System.Drawing.Size(155, 146);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
@@ -398,7 +398,7 @@
             this.clock1.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Circle;
             this.clock1.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.clock1.CurrentDateTime = new System.DateTime(2023, 11, 27, 0, 40, 17, 555);
-            this.clock1.CustomTime = new System.DateTime(2023, 12, 3, 22, 0, 14, 82);
+            this.clock1.CustomTime = new System.DateTime(2023, 12, 5, 20, 23, 15, 408);
             this.clock1.DigitalRenderer = digitalClockRenderer1;
             this.clock1.DisplayDates = true;
             this.clock1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));

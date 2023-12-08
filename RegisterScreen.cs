@@ -22,7 +22,7 @@ namespace interdisciplinar2
         {
             try
             {
-                string[] dados = new string[3] { txtNome.Text, txtCorte.Text,txtData.Text};
+                string[] dados = new string[3] { txtId.Text, txtCorte.Text,txtData.Text};
                 int cont = 0;
 
                 foreach (string values in dados)
@@ -43,13 +43,11 @@ namespace interdisciplinar2
                     conexaoMysql.Open();
 
 
-                    MySqlCommand comando = new MySqlCommand("insert into tb_agendamento(cortes,datahora) values('" + txtCorte.Text + "','"+ txtData.Text+ "');", conexaoMysql);
-                    MySqlCommand addnome = new MySqlCommand("insert into tb_clientes(nome,email,senha_cliente,telefone) values('" + txtNome.Text + "');", conexaoMysql);
-                    addnome.ExecuteNonQuery(); 
+                    MySqlCommand comando = new MySqlCommand("insert into tb_agendamento(id_cliente,cortes,datahora) values("+txtId.Text+",'" + txtCorte.Text + "','"+ txtData.Text+ "');", conexaoMysql);
                     comando.ExecuteNonQuery();
 
                     MessageBox.Show("Agendamento feito", "Horário marcado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNome.Text = "";
+                    txtId.Text = "";
                     txtCorte.Text = "";
                     txtData.Text = "";
                 }

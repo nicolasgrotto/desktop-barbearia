@@ -152,7 +152,7 @@ namespace interdisciplinar2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=etec");
+            MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=jhon");
             try
             {
                 this.Cursor = Cursors.WaitCursor;
