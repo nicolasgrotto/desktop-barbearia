@@ -34,12 +34,27 @@ namespace interdisciplinar2
         {
             string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
             MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-            conexaoMysql.Open();
+            try
+            {
+                conexaoMysql.Open();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < now()-1 ORDER BY datahora DESC", conexaoMysql);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvHistorico.DataSource = dt;
+                MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < now()-1 ORDER BY datahora DESC", conexaoMysql);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgvHistorico.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conexaoMysql.State == ConnectionState.Open)
+                {
+                    conexaoMysql.Close();
+                }
+                conexaoMysql.Dispose();
+            }
         }
 
         private void cbHistorico_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,34 +64,79 @@ namespace interdisciplinar2
             {
                 string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-                conexaoMysql.Open();
+                try
+                {
+                    conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where WEEK (datahora) = WEEK( current_date ) - 1 AND YEAR( datahora) = YEAR( current_date ) ORDER BY datahora DESC;", conexaoMysql);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvHistorico.DataSource = dt;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where WEEK (datahora) = WEEK( current_date ) - 1 AND YEAR( datahora) = YEAR( current_date ) ORDER BY datahora DESC;", conexaoMysql);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvHistorico.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conexaoMysql.State == ConnectionState.Open)
+                    {
+                        conexaoMysql.Close();
+                    }
+                    conexaoMysql.Dispose();
+                }
             }
             else if (cbHistorico.SelectedIndex == 1)
             {
                 string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-                conexaoMysql.Open();
+                try
+                {
+                    conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where month(datahora) = month(curdate() - interval 1 month) and year(datahora) = year(curdate() - interval 1 month) ORDER BY datahora DESC;", conexaoMysql);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvHistorico.DataSource = dt;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where month(datahora) = month(curdate() - interval 1 month) and year(datahora) = year(curdate() - interval 1 month) ORDER BY datahora DESC;", conexaoMysql);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvHistorico.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conexaoMysql.State == ConnectionState.Open)
+                    {
+                        conexaoMysql.Close();
+                    }
+                    conexaoMysql.Dispose();
+                }
             }
             else if (cbHistorico.SelectedIndex == 2)
             {
                 string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
                 MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-                conexaoMysql.Open();
+                try
+                {
+                    conexaoMysql.Open();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < current_date() ORDER BY datahora DESC; ", conexaoMysql);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvHistorico.DataSource = dt;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < current_date() ORDER BY datahora DESC; ", conexaoMysql);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvHistorico.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (conexaoMysql.State == ConnectionState.Open)
+                    {
+                        conexaoMysql.Close();
+                    }
+                    conexaoMysql.Dispose();
+                }
             }
         }
     }
