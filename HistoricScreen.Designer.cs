@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvHistorico = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,11 +43,35 @@
             // 
             // dgvHistorico
             // 
+            this.dgvHistorico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHistorico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistorico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(33)))));
+            this.dgvHistorico.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistorico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorico.Location = new System.Drawing.Point(283, 60);
+            this.dgvHistorico.Margin = new System.Windows.Forms.Padding(0);
             this.dgvHistorico.Name = "dgvHistorico";
-            this.dgvHistorico.Size = new System.Drawing.Size(451, 268);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistorico.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvHistorico.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHistorico.Size = new System.Drawing.Size(451, 318);
             this.dgvHistorico.TabIndex = 0;
             // 
             // pictureBox2
@@ -69,6 +96,7 @@
             // 
             // cbHistorico
             // 
+            this.cbHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbHistorico.Font = new System.Drawing.Font("Cascadia Code", 12.75F);
             this.cbHistorico.ForeColor = System.Drawing.SystemColors.Desktop;
             this.cbHistorico.FormattingEnabled = true;
@@ -76,7 +104,7 @@
             "Horários da última semana",
             "Horários do último mês",
             "Horários antes de hoje"});
-            this.cbHistorico.Location = new System.Drawing.Point(423, 373);
+            this.cbHistorico.Location = new System.Drawing.Point(390, 427);
             this.cbHistorico.Name = "cbHistorico";
             this.cbHistorico.Size = new System.Drawing.Size(244, 30);
             this.cbHistorico.TabIndex = 4;
@@ -87,7 +115,8 @@
             this.tituloSelecionado.AutoSize = true;
             this.tituloSelecionado.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloSelecionado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tituloSelecionado.Location = new System.Drawing.Point(306, 18);
+            this.tituloSelecionado.Location = new System.Drawing.Point(292, 20);
+            this.tituloSelecionado.Margin = new System.Windows.Forms.Padding(0);
             this.tituloSelecionado.Name = "tituloSelecionado";
             this.tituloSelecionado.Size = new System.Drawing.Size(100, 25);
             this.tituloSelecionado.TabIndex = 5;

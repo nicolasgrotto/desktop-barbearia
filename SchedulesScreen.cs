@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using interdisciplinar2.Models;
+using MySql.Data.MySqlClient;
+using Syncfusion.Windows.Forms.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +23,12 @@ namespace interdisciplinar2
         private void SchedulesScreen_Load(object sender, EventArgs e)
         {
             carregarBanco();
+
+            if (ThemeController.GetTheme() == "light")
+            {
+                this.BackColor = ThemeController.LightThemeBackColor;
+                tituloSelecionado.ForeColor = ThemeController.LightThemeForeColor;
+            }
         }
 
         private void carregarBanco()

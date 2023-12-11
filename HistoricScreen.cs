@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
 
 namespace interdisciplinar2
@@ -21,6 +22,12 @@ namespace interdisciplinar2
         private void HistoricScreen_Load(object sender, EventArgs e)
         {
             carregarBanco();
+
+            if (ThemeController.GetTheme() == "light")
+            {
+                this.BackColor = ThemeController.LightThemeBackColor;
+                tituloSelecionado.ForeColor = ThemeController.LightThemeForeColor;
+            }
         }
 
         private void carregarBanco()
