@@ -388,6 +388,9 @@ namespace interdisciplinar2
 
             UnclickBtn();
 
+            ClickedBtn(ibAgendamentos);
+            ibAgendamentos.IconColor = RgbColors.color4;
+
             lblFormName.Text = "Agendamentos Futuros";
         }
 
@@ -396,6 +399,9 @@ namespace interdisciplinar2
             OpenChildForm(new HistoricScreen());
 
             UnclickBtn();
+
+            ClickedBtn(ibAgendamentos);
+            ibAgendamentos.IconColor = RgbColors.color4;
 
             lblFormName.Text = "Histórico";
         }
