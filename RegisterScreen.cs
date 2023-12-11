@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using interdisciplinar2.CustomMessageBoxes;
 using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace interdisciplinar2
 {
@@ -83,7 +79,8 @@ namespace interdisciplinar2
                 };
                 if (cont >= 1)
                 {
-                    MessageBox.Show("Você deixou" + cont + "campo em branco, o preencha!", "aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    ErrorMessageBox eMessageBox = new ErrorMessageBox("Você deixou " + cont + " campo(s) em branco, preencha-o(s)!");
+                    eMessageBox.ShowDialog();
                 }
                 else
                 {
@@ -94,15 +91,18 @@ namespace interdisciplinar2
                     MySqlCommand comando = new MySqlCommand("insert into tb_agendamento(id_cliente,cortes,datahora) values(" + txtId.Text + ",'" + txtCorte.Text + "','" + txtData.Text + "');", conexaoMysql);
                     comando.ExecuteNonQuery();
 
-                    MessageBox.Show("Agendamento feito", "Horário marcado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    DoneMessageBox dMessageBox = new DoneMessageBox("Agendamento concluído, o horário está marcado!");
+                    dMessageBox.Show();
+
                     txtId.Text = "";
                     txtCorte.Text = "";
                     txtData.Text = "";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Verifique isso" + ex.Message, "Algo deu errado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                ErrorMessageBox eMessageBox = new ErrorMessageBox("Algo deu errado, verifique se os dados estão corretos!");
+                eMessageBox.ShowDialog();
             }
         }
 

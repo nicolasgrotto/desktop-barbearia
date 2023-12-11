@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using interdisciplinar2.CustomMessageBoxes;
 using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace interdisciplinar2
 {
@@ -42,10 +37,14 @@ namespace interdisciplinar2
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvHistorico.DataSource = dt;
+
+                DoneMessageBox dMessageBox = new DoneMessageBox("Histórico carregado com sucesso!");
+                dMessageBox.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                eMessageBox.ShowDialog();
             }
             finally
             {
@@ -75,7 +74,8 @@ namespace interdisciplinar2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                    eMessageBox.ShowDialog();
                 }
                 finally
                 {
@@ -101,7 +101,8 @@ namespace interdisciplinar2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                    eMessageBox.ShowDialog();
                 }
                 finally
                 {
@@ -127,7 +128,8 @@ namespace interdisciplinar2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                    eMessageBox.ShowDialog();
                 }
                 finally
                 {

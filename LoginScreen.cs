@@ -1,12 +1,11 @@
-﻿using interdisciplinar2.Models;
+﻿using interdisciplinar2.CustomMessageBoxes;
+using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows;
 using System.Windows.Forms;
-using System.Windows.Media.Media3D;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace interdisciplinar2
@@ -175,7 +174,8 @@ namespace interdisciplinar2
 
                         if (txtbName.Text == user && txtbPassword.Text == password)
                         {
-                            MessageBox.Show("Login efetuado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DoneMessageBox dMessageBox = new DoneMessageBox("Login efetuado com sucesso!");
+                            dMessageBox.ShowDialog();
 
                             this.Hide();
                             MainScreen mainScreen = new MainScreen();
@@ -203,7 +203,8 @@ namespace interdisciplinar2
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                eMessageBox.ShowDialog();
             }
             finally
             {

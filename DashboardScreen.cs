@@ -1,4 +1,5 @@
-﻿using interdisciplinar2.Models;
+﻿using interdisciplinar2.CustomMessageBoxes;
+using interdisciplinar2.Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace interdisciplinar2
                 chart.DataSource = dashboard.RevenueByDateList;
                 chart.Series[0].XValueMember = "Date";
                 chart.Series[0].YValueMembers = "totalAmount";
-                chart.DataBind();
+                chart.DataBind();              
             }
         }
 

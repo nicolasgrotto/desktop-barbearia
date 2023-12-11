@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using interdisciplinar2.CustomMessageBoxes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -55,7 +56,8 @@ namespace interdisciplinar2.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                eMessageBox.ShowDialog();
             }
         }
 
@@ -142,7 +144,8 @@ namespace interdisciplinar2.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                eMessageBox.ShowDialog();
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using interdisciplinar2.Models;
+﻿using interdisciplinar2.CustomMessageBoxes;
+using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
@@ -88,12 +89,14 @@ namespace interdisciplinar2
                             }
                             else
                             {
-                                MessageBox.Show("As senhas não coincidem!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ErrorMessageBox eMessageBox = new ErrorMessageBox("As senhas não coincidem!");
+                                eMessageBox.ShowDialog();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Senha incorreta!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            ErrorMessageBox eMessageBox = new ErrorMessageBox("Senha atual incorreta!");
+                            eMessageBox.ShowDialog();
                         }
                     }
 
@@ -105,16 +108,18 @@ namespace interdisciplinar2
                         {
                             command2.ExecuteNonQuery();
 
-                            MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DoneMessageBox dMessageBox = new DoneMessageBox("Senha alterada com sucesso!");
+                            dMessageBox.ShowDialog();
                         }
                     }
 
                     this.Cursor = Cursors.Default;
                 }
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
-                MessageBox.Show(err.Message);
+                ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                eMessageBox.ShowDialog();
             }
             finally
             {

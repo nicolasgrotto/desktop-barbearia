@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using interdisciplinar2.CustomMessageBoxes;
 using interdisciplinar2.Models;
 using Syncfusion.Windows.Forms.Tools;
 using System;
@@ -310,7 +311,7 @@ namespace interdisciplinar2
 
         private void toggleButton1_Click(object sender, EventArgs e)
         {
-            timerToggleButton.Start();
+            timerToggleButton.Start();            
 
             toggleButton1.Enabled = false;
 
