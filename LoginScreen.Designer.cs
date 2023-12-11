@@ -117,9 +117,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::interdisciplinar2.Properties.Resources.barber_logo_no_bg_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 186);
+            this.pictureBox1.Size = new System.Drawing.Size(168, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
