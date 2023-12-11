@@ -11,9 +11,9 @@ namespace interdisciplinar2.Models
     {
         private readonly string _connectionString;
 
-        public DbConnection()
+        protected DbConnection()
         {
-            _connectionString = "server=localhost;database=db_barbearia;uid=root;pwd=jhon;";
+            _connectionString = "server=localhost;database=db_barbearia;uid=root;pwd=etec;";
         }
 
         protected MySqlConnection GetConnection()

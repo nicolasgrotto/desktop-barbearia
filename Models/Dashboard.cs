@@ -40,14 +40,14 @@ namespace interdisciplinar2.Models
                     {
                         command.Connection = connection;
 
-                        command.CommandText = @"SELECT COUNT(id_agendamento) FROM tb_agendamento WHERE datahora BETWEEN @fromDate AND @toDate;";
+                        command.CommandText = @"SELECT COUNT(id_agendamento) FROM tb_agendamentos WHERE datahora BETWEEN @fromDate AND @toDate;";
 
                         command.Parameters.Add("@fromDate", MySqlDbType.DateTime).Value = startDate;
                         command.Parameters.Add("@toDate", MySqlDbType.DateTime).Value = endDate;
 
                         numberOfSchedules = int.Parse(command.ExecuteScalar().ToString());
 
-                        command.CommandText = "SELECT nome FROM tb_clientes INNER JOIN tb_agendamento ON tb_clientes.id_cliente = tb_agendamento.id_cliente GROUP BY nome;";
+                        command.CommandText = "SELECT nome FROM tb_clientes INNER JOIN tb_agendamentos ON tb_clientes.id_cliente = tb_agendamentos.id_cliente GROUP BY nome;";
 
                         ClientWithMostSchedules = (string)command.ExecuteScalar();
                     }
@@ -74,7 +74,7 @@ namespace interdisciplinar2.Models
                     {
                         command.Connection = connection;
 
-                        command.CommandText = @"SELECT datahora, COUNT(id_agendamento) FROM tb_agendamento WHERE datahora BETWEEN @fromDate AND @toDate  GROUP BY datahora;";
+                        command.CommandText = @"SELECT datahora, COUNT(id_agendamento) FROM tb_agendamentos WHERE datahora BETWEEN @fromDate AND @toDate  GROUP BY datahora;";
 
                         command.Parameters.Add("@fromDate", MySqlDbType.DateTime).Value = startDate;
                         command.Parameters.Add("@toDate", MySqlDbType.DateTime).Value = endDate;

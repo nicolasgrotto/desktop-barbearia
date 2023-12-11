@@ -73,9 +73,9 @@
             this.cbHistorico.ForeColor = System.Drawing.SystemColors.Desktop;
             this.cbHistorico.FormattingEnabled = true;
             this.cbHistorico.Items.AddRange(new object[] {
-            "Horários da ultima semana",
-            "Horários do ultimo mês",
-            "Horários de hoje"});
+            "Horários da próxima semana",
+            "Horários do próximo mês",
+            "Todos depois de hoje"});
             this.cbHistorico.Location = new System.Drawing.Point(420, 385);
             this.cbHistorico.Name = "cbHistorico";
             this.cbHistorico.Size = new System.Drawing.Size(238, 30);
@@ -85,13 +85,13 @@
             // tituloSelecionado
             // 
             this.tituloSelecionado.AutoSize = true;
-            this.tituloSelecionado.Font = new System.Drawing.Font("Cascadia Code", 12.75F);
+            this.tituloSelecionado.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloSelecionado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tituloSelecionado.Location = new System.Drawing.Point(471, 27);
+            this.tituloSelecionado.Location = new System.Drawing.Point(318, 23);
             this.tituloSelecionado.Name = "tituloSelecionado";
-            this.tituloSelecionado.Size = new System.Drawing.Size(70, 22);
+            this.tituloSelecionado.Size = new System.Drawing.Size(111, 25);
             this.tituloSelecionado.TabIndex = 6;
-            this.tituloSelecionado.Text = "label1";
+            this.tituloSelecionado.Text = "Horários ";
             // 
             // SchedulesScreen
             // 

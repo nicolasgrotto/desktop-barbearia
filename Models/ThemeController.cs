@@ -29,7 +29,7 @@ namespace interdisciplinar2.Models
 
         public static void SetTheme(string theme)
         {
-            string themeFile = "C:\\Users\\araph\\Source\\Repos\\interdisciplinar-desktop\\ThemeFile\\Theme.txt";
+            string themeFile = "C:\\Users\\nickg\\source\\repos\\interdisciplinar2\\ThemeFile\\Theme.txt";
 
             try
             {

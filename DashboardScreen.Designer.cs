@@ -40,26 +40,26 @@
             this.btnCustom = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.pnlTotalSchedules = new System.Windows.Forms.Panel();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.lblTotalSchedules = new System.Windows.Forms.Label();
             this.lblTitle1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTitle3 = new System.Windows.Forms.Label();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTotalSchedules.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpStartDate
@@ -172,7 +172,7 @@
             // 
             // pnlTotalSchedules
             // 
-            this.pnlTotalSchedules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.pnlTotalSchedules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.pnlTotalSchedules.Controls.Add(this.iconPictureBox2);
             this.pnlTotalSchedules.Controls.Add(this.lblTotalSchedules);
             this.pnlTotalSchedules.Controls.Add(this.lblTitle1);
@@ -180,6 +180,20 @@
             this.pnlTotalSchedules.Name = "pnlTotalSchedules";
             this.pnlTotalSchedules.Size = new System.Drawing.Size(222, 61);
             this.pnlTotalSchedules.TabIndex = 8;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 44;
+            this.iconPictureBox2.Location = new System.Drawing.Point(3, 22);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(44, 48);
+            this.iconPictureBox2.TabIndex = 13;
+            this.iconPictureBox2.TabStop = false;
             // 
             // lblTotalSchedules
             // 
@@ -205,7 +219,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel1.Controls.Add(this.iconPictureBox3);
             this.panel1.Controls.Add(this.lblTotalRevenue);
             this.panel1.Controls.Add(this.lblTitle2);
@@ -213,6 +227,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 61);
             this.panel1.TabIndex = 9;
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 39;
+            this.iconPictureBox3.Location = new System.Drawing.Point(7, 22);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(58, 39);
+            this.iconPictureBox3.TabIndex = 14;
+            this.iconPictureBox3.TabStop = false;
             // 
             // lblTotalRevenue
             // 
@@ -238,7 +266,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel2.Controls.Add(this.iconPictureBox1);
             this.panel2.Controls.Add(this.lblName);
             this.panel2.Controls.Add(this.lblTitle3);
@@ -246,6 +274,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(226, 61);
             this.panel2.TabIndex = 10;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 36;
+            this.iconPictureBox1.Location = new System.Drawing.Point(7, 24);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(43, 36);
+            this.iconPictureBox1.TabIndex = 10;
+            this.iconPictureBox1.TabStop = false;
             // 
             // lblName
             // 
@@ -272,7 +314,7 @@
             // 
             // chart
             // 
-            this.chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
+            this.chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.chart.BackSecondaryColor = System.Drawing.Color.Transparent;
             chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             chartArea1.AxisX.LineColor = System.Drawing.Color.White;
@@ -329,48 +371,6 @@
             this.label1.Text = "-";
             this.label1.Visible = false;
             // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 36;
-            this.iconPictureBox1.Location = new System.Drawing.Point(7, 24);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(43, 36);
-            this.iconPictureBox1.TabIndex = 10;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 44;
-            this.iconPictureBox2.Location = new System.Drawing.Point(3, 22);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(44, 48);
-            this.iconPictureBox2.TabIndex = 13;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(86)))));
-            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
-            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.IconSize = 39;
-            this.iconPictureBox3.Location = new System.Drawing.Point(7, 22);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(58, 39);
-            this.iconPictureBox3.TabIndex = 14;
-            this.iconPictureBox3.TabStop = false;
-            // 
             // DashboardScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,14 +394,14 @@
             this.Load += new System.EventHandler(this.DashboardScreen_Load);
             this.pnlTotalSchedules.ResumeLayout(false);
             this.pnlTotalSchedules.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
