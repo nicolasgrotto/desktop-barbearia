@@ -319,12 +319,23 @@ namespace interdisciplinar2
             {
                 if (toggleButton1.ToggleState != ToggleButtonState.Active)
                 {
-                    ThemeController.SetTheme("light");
-
-                    if (CurrentChildForm != null)
+                    try
                     {
-                        CurrentChildForm.BackColor = ThemeController.LightThemeBackColor;
+                        if (CurrentChildForm != null)
+                        {
+                            CurrentChildForm.BackColor = ThemeController.LightThemeBackColor;
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                        eMessageBox.ShowDialog();
+
+                        toggleButton1.ToggleState = ToggleButtonState.Active;
+                        return;
+                    }
+
+                    ThemeController.SetTheme("light");
 
                     panelMainForms.BackColor = Color.White;
 
@@ -332,12 +343,23 @@ namespace interdisciplinar2
                 }
                 else if (toggleButton1.ToggleState != ToggleButtonState.Inactive)
                 {
-                    ThemeController.SetTheme("dark");
-
-                    if (CurrentChildForm != null)
+                    try
                     {
-                        CurrentChildForm.BackColor = ThemeController.DarkThemeBackColor;
+                        if (CurrentChildForm != null)
+                        {
+                            CurrentChildForm.BackColor = ThemeController.DarkThemeBackColor;
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                        eMessageBox.ShowDialog();
+
+                        toggleButton1.ToggleState = ToggleButtonState.Inactive;
+                        return;
+                    }
+
+                    ThemeController.SetTheme("dark");
 
                     panelMainForms.BackColor = ThemeController.DarkThemeBackColor;
 
