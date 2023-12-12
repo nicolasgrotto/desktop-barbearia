@@ -41,7 +41,7 @@ namespace interdisciplinar2.CustomMessageBoxes
         {
             timer1.Enabled = true;
         }
-      
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
 

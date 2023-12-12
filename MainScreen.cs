@@ -311,7 +311,7 @@ namespace interdisciplinar2
 
         private void toggleButton1_Click(object sender, EventArgs e)
         {
-            timerToggleButton.Start();            
+            timerToggleButton.Start();
 
             toggleButton1.Enabled = false;
 
