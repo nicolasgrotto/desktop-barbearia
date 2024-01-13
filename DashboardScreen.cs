@@ -49,10 +49,10 @@ namespace interdisciplinar2
 
         private void ReturnButtonToNormalColor(Button btn)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                btn.BackColor = ThemeController.LightThemeBtnBackColor;
-                btn.ForeColor = ThemeController.LightThemeForeColor;
+                btn.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btn.ForeColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
@@ -178,40 +178,40 @@ namespace interdisciplinar2
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                pnlTotalSchedules.BackColor = ThemeController.LightThemeItemBackColor;
-                panel1.BackColor = ThemeController.LightThemeItemBackColor;
-                panel2.BackColor = ThemeController.LightThemeItemBackColor;
+                pnlTotalSchedules.BackColor = ProgramTheme.LightThemeItemBackColor;
+                panel1.BackColor = ProgramTheme.LightThemeItemBackColor;
+                panel2.BackColor = ProgramTheme.LightThemeItemBackColor;
 
-                chart.BackColor = ThemeController.LightThemeItemBackColor;
-                chart.Legends[0].BackColor = ThemeController.LightThemeItemBackColor;
-                chart.Legends[0].ForeColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].AxisX.MajorGrid.LineColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].AxisY.MajorGrid.LineColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].AxisY.LineColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].AxisX.LineColor = ThemeController.LightThemeForeColor;
-                chart.ChartAreas[0].BackColor = ThemeController.LightThemeBackColor;
+                chart.BackColor = ProgramTheme.LightThemeItemBackColor;
+                chart.Legends[0].BackColor = ProgramTheme.LightThemeItemBackColor;
+                chart.Legends[0].ForeColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].AxisX.MajorGrid.LineColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].AxisY.MajorGrid.LineColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].AxisY.LineColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].AxisX.LineColor = ProgramTheme.LightThemeForeColor;
+                chart.ChartAreas[0].BackColor = ProgramTheme.LightThemeBackColor;
 
-                lblTotalSchedules.ForeColor = ThemeController.LightThemeForeColor;
-                lblTotalRevenue.ForeColor = ThemeController.LightThemeForeColor;
-                lblName.ForeColor = ThemeController.LightThemeForeColor;
+                lblTotalSchedules.ForeColor = ProgramTheme.LightThemeForeColor;
+                lblTotalRevenue.ForeColor = ProgramTheme.LightThemeForeColor;
+                lblName.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                btnToday.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnLast7Days.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnLast30Days.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnCustom.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnOk.BackColor = ThemeController.LightThemeBtnBackColor;
+                btnToday.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnLast7Days.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnLast30Days.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnCustom.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnOk.BackColor = ProgramTheme.LightThemeBtnBackColor;
 
-                btnToday.ForeColor = ThemeController.LightThemeForeColor;
-                btnLast7Days.ForeColor = ThemeController.LightThemeForeColor;
-                btnLast30Days.ForeColor = ThemeController.LightThemeForeColor;
-                btnCustom.ForeColor = ThemeController.LightThemeForeColor;
-                btnOk.ForeColor = ThemeController.LightThemeForeColor;
+                btnToday.ForeColor = ProgramTheme.LightThemeForeColor;
+                btnLast7Days.ForeColor = ProgramTheme.LightThemeForeColor;
+                btnLast30Days.ForeColor = ProgramTheme.LightThemeForeColor;
+                btnCustom.ForeColor = ProgramTheme.LightThemeForeColor;
+                btnOk.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                label1.ForeColor = ThemeController.LightThemeForeColor;
+                label1.ForeColor = ProgramTheme.LightThemeForeColor;
 
                 iconPictureBox1.IconColor = Color.Black;
                 iconPictureBox2.IconColor = Color.Black;

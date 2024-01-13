@@ -42,8 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lblInvalidPassword = new System.Windows.Forms.Label();
-            this.lblInvalidUser = new System.Windows.Forms.Label();
             this.dontShowPasswordImage = new System.Windows.Forms.PictureBox();
             this.showPasswordImage = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -220,32 +218,6 @@
             this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
-            // lblInvalidPassword
-            // 
-            this.lblInvalidPassword.AutoSize = true;
-            this.lblInvalidPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblInvalidPassword.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvalidPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidPassword.Location = new System.Drawing.Point(428, 284);
-            this.lblInvalidPassword.Name = "lblInvalidPassword";
-            this.lblInvalidPassword.Size = new System.Drawing.Size(153, 20);
-            this.lblInvalidPassword.TabIndex = 14;
-            this.lblInvalidPassword.Text = "Invalid Password";
-            this.lblInvalidPassword.Visible = false;
-            // 
-            // lblInvalidUser
-            // 
-            this.lblInvalidUser.AutoSize = true;
-            this.lblInvalidUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblInvalidUser.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvalidUser.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidUser.Location = new System.Drawing.Point(429, 186);
-            this.lblInvalidUser.Name = "lblInvalidUser";
-            this.lblInvalidUser.Size = new System.Drawing.Size(117, 20);
-            this.lblInvalidUser.TabIndex = 15;
-            this.lblInvalidUser.Text = "Invalid User";
-            this.lblInvalidUser.Visible = false;
-            // 
             // dontShowPasswordImage
             // 
             this.dontShowPasswordImage.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -296,8 +268,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(802, 371);
-            this.Controls.Add(this.lblInvalidUser);
-            this.Controls.Add(this.lblInvalidPassword);
             this.Controls.Add(this.dontShowPasswordImage);
             this.Controls.Add(this.showPasswordImage);
             this.Controls.Add(this.btnLogin);
@@ -351,8 +321,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox showPasswordImage;
         private System.Windows.Forms.PictureBox dontShowPasswordImage;
-        private System.Windows.Forms.Label lblInvalidPassword;
-        private System.Windows.Forms.Label lblInvalidUser;
         private FontAwesome.Sharp.IconPictureBox ipbMinimize;
     }
 }

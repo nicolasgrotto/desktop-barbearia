@@ -16,23 +16,23 @@ namespace interdisciplinar2
 
         private void AlterarSenhaScreen_Load(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                label1.ForeColor = ThemeController.LightThemeForeColor;
-                label2.ForeColor = ThemeController.LightThemeForeColor;
-                label3.ForeColor = ThemeController.LightThemeForeColor;
+                label1.ForeColor = ProgramTheme.LightThemeForeColor;
+                label2.ForeColor = ProgramTheme.LightThemeForeColor;
+                label3.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                txtbPassword.ForeColor = ThemeController.LightThemeForeColor;
-                txtbPassword.BackColor = ThemeController.LightThemeBackColor;
+                txtbPassword.ForeColor = ProgramTheme.LightThemeForeColor;
+                txtbPassword.BackColor = ProgramTheme.LightThemeBackColor;
 
-                txtbConfirmPassword.ForeColor = ThemeController.LightThemeForeColor;
-                txtbConfirmPassword.BackColor = ThemeController.LightThemeBackColor;
+                txtbConfirmPassword.ForeColor = ProgramTheme.LightThemeForeColor;
+                txtbConfirmPassword.BackColor = ProgramTheme.LightThemeBackColor;
 
-                txtbNewPassword.ForeColor = ThemeController.LightThemeForeColor;
-                txtbNewPassword.BackColor = ThemeController.LightThemeBackColor;
+                txtbNewPassword.ForeColor = ProgramTheme.LightThemeForeColor;
+                txtbNewPassword.BackColor = ProgramTheme.LightThemeBackColor;
 
-                btnChangePassword.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnChangePassword.ForeColor = ThemeController.LightThemeForeColor;
+                btnChangePassword.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnChangePassword.ForeColor = ProgramTheme.LightThemeForeColor;
             }
         }
 
@@ -43,15 +43,15 @@ namespace interdisciplinar2
 
         private void btnChangePassword_MouseLeave(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                btnChangePassword.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnChangePassword.ForeColor = ThemeController.LightThemeForeColor;
+                btnChangePassword.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnChangePassword.ForeColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
                 btnChangePassword.FlatAppearance.BorderColor = Color.FromArgb(225, 177, 44);
-                btnChangePassword.BackColor = ThemeController.DarkThemeBackColor;
+                btnChangePassword.BackColor = ProgramTheme.DarkThemeBackColor;
                 btnChangePassword.ForeColor = Color.FromName("ControlLightLight");
             }
         }

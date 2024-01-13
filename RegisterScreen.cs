@@ -108,18 +108,18 @@ namespace interdisciplinar2
 
         private void AgendamentosScreen_Load(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                ibSearch.BackColor = ThemeController.LightThemeBtnBackColor;
-                ibSearch.IconColor = ThemeController.LightThemeForeColor;
+                ibSearch.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                ibSearch.IconColor = ProgramTheme.LightThemeForeColor;
 
-                label1.ForeColor = ThemeController.LightThemeForeColor;
-                label2.ForeColor = ThemeController.LightThemeForeColor;
-                label3.ForeColor = ThemeController.LightThemeForeColor;
-                label4.ForeColor = ThemeController.LightThemeForeColor;
+                label1.ForeColor = ProgramTheme.LightThemeForeColor;
+                label2.ForeColor = ProgramTheme.LightThemeForeColor;
+                label3.ForeColor = ProgramTheme.LightThemeForeColor;
+                label4.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                btnCadastrar.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnCadastrar.ForeColor = ThemeController.LightThemeForeColor;
+                btnCadastrar.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnCadastrar.ForeColor = ProgramTheme.LightThemeForeColor;
             }
 
             LoadDatabaseData();
@@ -137,14 +137,14 @@ namespace interdisciplinar2
 
         private void ibSearch_MouseLeave(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                ibSearch.BackColor = ThemeController.LightThemeBtnBackColor;
-                ibSearch.IconColor = ThemeController.LightThemeForeColor;
+                ibSearch.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                ibSearch.IconColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
-                ibSearch.BackColor = ThemeController.DarkThemeBackColor;
+                ibSearch.BackColor = ProgramTheme.DarkThemeBackColor;
                 ibSearch.IconColor = Color.White;
             }
         }
@@ -156,14 +156,14 @@ namespace interdisciplinar2
 
         private void btnCadastrar_MouseLeave(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                btnCadastrar.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnCadastrar.ForeColor = ThemeController.LightThemeForeColor;
+                btnCadastrar.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnCadastrar.ForeColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
-                btnCadastrar.BackColor = ThemeController.DarkThemeBackColor;
+                btnCadastrar.BackColor = ProgramTheme.DarkThemeBackColor;
             }
         }
     }

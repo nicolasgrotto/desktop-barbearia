@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\DbConnection.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="RegisterScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,7 +200,7 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ThemeController.cs" />
+    <Compile Include="Models\ProgramTheme.cs" />
     <Compile Include="SchedulesScreen.cs">
       <SubType>Form</SubType>
     </Compile>

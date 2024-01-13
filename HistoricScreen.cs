@@ -18,10 +18,10 @@ namespace interdisciplinar2
         {
             carregarBanco();
 
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                this.BackColor = ThemeController.LightThemeBackColor;
-                tituloSelecionado.ForeColor = ThemeController.LightThemeForeColor;
+                this.BackColor = ProgramTheme.LightThemeBackColor;
+                tituloSelecionado.ForeColor = ProgramTheme.LightThemeForeColor;
             }
         }
 

@@ -4,23 +4,18 @@ using System.IO;
 
 namespace interdisciplinar2.Models
 {
-    public static class ThemeController
+    public static class ProgramTheme
     {
-        public static readonly Color LightThemeBackColor;
-        public static readonly Color LightThemeForeColor;
-        public static readonly Color LightThemeItemBackColor;
-        public static readonly Color LightThemeBtnBackColor;
-        public static readonly Color DarkThemeBackColor;
+        public static readonly Color YellowColor = Color.FromArgb(24, 161, 251);
+        public static readonly Color LightThemeBackColor = Color.FromArgb(255, 255, 255);
+        public static readonly Color LightThemeForeColor = Color.FromArgb(0, 0, 0);
+        public static readonly Color LightThemeItemBackColor = Color.WhiteSmoke;
+        public static readonly Color LightThemeBtnBackColor = Color.FromArgb(215, 215, 215);
 
-        static ThemeController()
-        {
-            LightThemeBackColor = Color.FromArgb(255, 255, 255);
-            LightThemeForeColor = Color.FromArgb(0, 0, 0);
-            LightThemeItemBackColor = Color.WhiteSmoke;
-            LightThemeBtnBackColor = Color.FromArgb(215, 215, 215);
-
-            DarkThemeBackColor = Color.FromArgb(40, 40, 40);
-        }
+        public static readonly Color DarkThemeBackColor = Color.FromArgb(40, 40, 40);
+        public static readonly Color DarkThemeForeColor = Color.FromArgb(255, 255, 255);
+        public static readonly Color DarkThemeItemBackColor = Color.FromArgb(60, 60, 60);
+        public static readonly Color DarkThemeBtnBackColor = Color.Transparent;
 
         public static void SetTheme(string theme)
         {

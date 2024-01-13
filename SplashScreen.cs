@@ -66,14 +66,14 @@ namespace interdisciplinar2
 
         private void SplashScreen_Load(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                this.BackColor = ThemeController.LightThemeBackColor;
-                label1.ForeColor = ThemeController.LightThemeForeColor;
+                this.BackColor = ProgramTheme.LightThemeBackColor;
+                label1.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                progressBar.BackColor = ThemeController.LightThemeBackColor;
-                progressBar.InnerColor = ThemeController.LightThemeBackColor;
-                progressBar.ForeColor = ThemeController.LightThemeForeColor;
+                progressBar.BackColor = ProgramTheme.LightThemeBackColor;
+                progressBar.InnerColor = ProgramTheme.LightThemeBackColor;
+                progressBar.ForeColor = ProgramTheme.LightThemeForeColor;
             }
         }
     }

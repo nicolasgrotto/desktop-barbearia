@@ -111,11 +111,6 @@ namespace interdisciplinar2.Models
                                                      Date = grouped.Key,
                                                      totalAmount = grouped.Sum(amount => amount.Value) * 20
                                                  }).ToList();
-
-                            //foreach (var item in resultTable)
-                            //{
-                            //    RevenueByDateList.Add(new RevenueByDate() { Date = item.Key.ToString("dd MMM"), totalAmount = item.Value * 20 });
-                            //}
                         }
                         else if (numberOfDays < 92)
                         {

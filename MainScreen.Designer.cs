@@ -42,10 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toggleButton1 = new Syncfusion.Windows.Forms.Tools.ToggleButton();
             this.panelLeftBtn = new System.Windows.Forms.Panel();
-            this.ibAlterarSenha = new FontAwesome.Sharp.IconButton();
+            this.ibChangePassword = new FontAwesome.Sharp.IconButton();
             this.ibDashboard = new FontAwesome.Sharp.IconButton();
-            this.ibAgendamentos = new FontAwesome.Sharp.IconButton();
-            this.ibAgendar = new FontAwesome.Sharp.IconButton();
+            this.ibSchedules = new FontAwesome.Sharp.IconButton();
+            this.ibSchedule = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
@@ -76,10 +76,10 @@
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.toggleButton1);
             this.panelLeft.Controls.Add(this.panelLeftBtn);
-            this.panelLeft.Controls.Add(this.ibAlterarSenha);
+            this.panelLeft.Controls.Add(this.ibChangePassword);
             this.panelLeft.Controls.Add(this.ibDashboard);
-            this.panelLeft.Controls.Add(this.ibAgendamentos);
-            this.panelLeft.Controls.Add(this.ibAgendar);
+            this.panelLeft.Controls.Add(this.ibSchedules);
+            this.panelLeft.Controls.Add(this.ibSchedule);
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
@@ -169,28 +169,28 @@
             this.panelLeftBtn.TabIndex = 2;
             this.panelLeftBtn.Visible = false;
             // 
-            // ibAlterarSenha
+            // ibChangePassword
             // 
-            this.ibAlterarSenha.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibAlterarSenha.FlatAppearance.BorderSize = 0;
-            this.ibAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibAlterarSenha.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibAlterarSenha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibAlterarSenha.IconChar = FontAwesome.Sharp.IconChar.Gear;
-            this.ibAlterarSenha.IconColor = System.Drawing.Color.White;
-            this.ibAlterarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibAlterarSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAlterarSenha.Location = new System.Drawing.Point(0, 374);
-            this.ibAlterarSenha.Name = "ibAlterarSenha";
-            this.ibAlterarSenha.Size = new System.Drawing.Size(220, 58);
-            this.ibAlterarSenha.TabIndex = 3;
-            this.ibAlterarSenha.Text = "Alterar Senha";
-            this.ibAlterarSenha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAlterarSenha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibAlterarSenha.UseVisualStyleBackColor = true;
-            this.ibAlterarSenha.Click += new System.EventHandler(this.ibAlterarSenha_Click);
-            this.ibAlterarSenha.MouseEnter += new System.EventHandler(this.ibAlterarSenha_MouseEnter);
-            this.ibAlterarSenha.MouseLeave += new System.EventHandler(this.ibAlterarSenha_MouseLeave);
+            this.ibChangePassword.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibChangePassword.FlatAppearance.BorderSize = 0;
+            this.ibChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibChangePassword.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibChangePassword.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibChangePassword.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            this.ibChangePassword.IconColor = System.Drawing.Color.White;
+            this.ibChangePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibChangePassword.Location = new System.Drawing.Point(0, 374);
+            this.ibChangePassword.Name = "ibChangePassword";
+            this.ibChangePassword.Size = new System.Drawing.Size(220, 58);
+            this.ibChangePassword.TabIndex = 3;
+            this.ibChangePassword.Text = "Alterar Senha";
+            this.ibChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibChangePassword.UseVisualStyleBackColor = true;
+            this.ibChangePassword.Click += new System.EventHandler(this.ibChangePassword_Click);
+            this.ibChangePassword.MouseEnter += new System.EventHandler(this.ibChangePassword_MouseEnter);
+            this.ibChangePassword.MouseLeave += new System.EventHandler(this.ibChangePassword_MouseLeave);
             // 
             // ibDashboard
             // 
@@ -215,52 +215,52 @@
             this.ibDashboard.MouseEnter += new System.EventHandler(this.ibDashboard_MouseEnter);
             this.ibDashboard.MouseLeave += new System.EventHandler(this.ibDashboard_MouseLeave);
             // 
-            // ibAgendamentos
+            // ibSchedules
             // 
-            this.ibAgendamentos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibAgendamentos.FlatAppearance.BorderSize = 0;
-            this.ibAgendamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibAgendamentos.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibAgendamentos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibAgendamentos.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
-            this.ibAgendamentos.IconColor = System.Drawing.Color.White;
-            this.ibAgendamentos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibAgendamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgendamentos.Location = new System.Drawing.Point(0, 258);
-            this.ibAgendamentos.Name = "ibAgendamentos";
-            this.ibAgendamentos.Size = new System.Drawing.Size(220, 58);
-            this.ibAgendamentos.TabIndex = 1;
-            this.ibAgendamentos.Text = "Agendamentos";
-            this.ibAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgendamentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibAgendamentos.UseVisualStyleBackColor = true;
-            this.ibAgendamentos.Click += new System.EventHandler(this.ibAgendamentos_Click);
-            this.ibAgendamentos.MouseEnter += new System.EventHandler(this.ibAgendamentos_MouseEnter);
-            this.ibAgendamentos.MouseLeave += new System.EventHandler(this.ibAgendamentos_MouseLeave);
+            this.ibSchedules.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibSchedules.FlatAppearance.BorderSize = 0;
+            this.ibSchedules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibSchedules.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibSchedules.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibSchedules.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.ibSchedules.IconColor = System.Drawing.Color.White;
+            this.ibSchedules.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibSchedules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibSchedules.Location = new System.Drawing.Point(0, 258);
+            this.ibSchedules.Name = "ibSchedules";
+            this.ibSchedules.Size = new System.Drawing.Size(220, 58);
+            this.ibSchedules.TabIndex = 1;
+            this.ibSchedules.Text = "Agendamentos";
+            this.ibSchedules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibSchedules.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibSchedules.UseVisualStyleBackColor = true;
+            this.ibSchedules.Click += new System.EventHandler(this.ibSchedules_Click);
+            this.ibSchedules.MouseEnter += new System.EventHandler(this.ibSchedules_MouseEnter);
+            this.ibSchedules.MouseLeave += new System.EventHandler(this.ibSchedules_MouseLeave);
             // 
-            // ibAgendar
+            // ibSchedule
             // 
-            this.ibAgendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
-            this.ibAgendar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibAgendar.FlatAppearance.BorderSize = 0;
-            this.ibAgendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibAgendar.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibAgendar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ibAgendar.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.ibAgendar.IconColor = System.Drawing.Color.White;
-            this.ibAgendar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibAgendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgendar.Location = new System.Drawing.Point(0, 200);
-            this.ibAgendar.Name = "ibAgendar";
-            this.ibAgendar.Size = new System.Drawing.Size(220, 58);
-            this.ibAgendar.TabIndex = 1;
-            this.ibAgendar.Text = "Agendar";
-            this.ibAgendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibAgendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibAgendar.UseVisualStyleBackColor = false;
-            this.ibAgendar.Click += new System.EventHandler(this.ibAgendar_Click);
-            this.ibAgendar.MouseEnter += new System.EventHandler(this.ibAgendar_MouseEnter);
-            this.ibAgendar.MouseLeave += new System.EventHandler(this.ibAgendar_MouseLeave);
+            this.ibSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.ibSchedule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibSchedule.FlatAppearance.BorderSize = 0;
+            this.ibSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibSchedule.Font = new System.Drawing.Font("Cascadia Code", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibSchedule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ibSchedule.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.ibSchedule.IconColor = System.Drawing.Color.White;
+            this.ibSchedule.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibSchedule.Location = new System.Drawing.Point(0, 200);
+            this.ibSchedule.Name = "ibSchedule";
+            this.ibSchedule.Size = new System.Drawing.Size(220, 58);
+            this.ibSchedule.TabIndex = 1;
+            this.ibSchedule.Text = "Agendar";
+            this.ibSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibSchedule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibSchedule.UseVisualStyleBackColor = false;
+            this.ibSchedule.Click += new System.EventHandler(this.ibSchedule_Click);
+            this.ibSchedule.MouseEnter += new System.EventHandler(this.ibSchedule_MouseEnter);
+            this.ibSchedule.MouseLeave += new System.EventHandler(this.ibSchedule_MouseLeave);
             // 
             // panel1
             // 
@@ -398,7 +398,7 @@
             this.clock1.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Circle;
             this.clock1.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.clock1.CurrentDateTime = new System.DateTime(2023, 11, 27, 0, 40, 17, 555);
-            this.clock1.CustomTime = new System.DateTime(2023, 12, 8, 13, 28, 25, 636);
+            this.clock1.CustomTime = new System.DateTime(2024, 1, 12, 20, 39, 43, 624);
             this.clock1.DigitalRenderer = digitalClockRenderer1;
             this.clock1.DisplayDates = true;
             this.clock1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
@@ -457,9 +457,9 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo;
-        private FontAwesome.Sharp.IconButton ibAgendar;
-        private FontAwesome.Sharp.IconButton ibAgendamentos;
-        private FontAwesome.Sharp.IconButton ibAlterarSenha;
+        private FontAwesome.Sharp.IconButton ibSchedule;
+        private FontAwesome.Sharp.IconButton ibSchedules;
+        private FontAwesome.Sharp.IconButton ibChangePassword;
         private FontAwesome.Sharp.IconButton ibDashboard;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblExit;

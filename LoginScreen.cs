@@ -12,11 +12,15 @@ namespace interdisciplinar2
 {
     public partial class LoginScreen : Form
     {
+        private Login login;
+
         public LoginScreen()
         {
             InitializeComponent();
 
             dontShowPasswordImage.Visible = false;
+
+            login = new Login();
         }
 
         private void DefaultNameText()
@@ -38,9 +42,9 @@ namespace interdisciplinar2
 
         private void txtbName_TextChanged(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                txtbName.ForeColor = ThemeController.LightThemeForeColor;
+                txtbName.ForeColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
@@ -55,9 +59,9 @@ namespace interdisciplinar2
                 txtbPassword.UseSystemPasswordChar = true;
             }
 
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                txtbPassword.ForeColor = ThemeController.LightThemeForeColor;
+                txtbPassword.ForeColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
@@ -79,31 +83,19 @@ namespace interdisciplinar2
         private void txtbName_MouseClick(object sender, MouseEventArgs e)
         {
             DefaultNameText();
-
-            if (lblInvalidUser.Visible == true)
-                lblInvalidUser.Visible = false;
-
-            if (lblInvalidPassword.Visible == true)
-                lblInvalidPassword.Visible = false;
         }
 
         private void txtbPassword_MouseClick(object sender, MouseEventArgs e)
         {
             DefaultPasswordText();
-
-            if (lblInvalidUser.Visible == true)
-                lblInvalidUser.Visible = false;
-
-            if (lblInvalidPassword.Visible == true)
-                lblInvalidPassword.Visible = false;
         }
 
         private void btnLogin_MouseLeave(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                btnLogin.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnLogin.ForeColor = ThemeController.LightThemeForeColor;
+                btnLogin.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnLogin.ForeColor = ProgramTheme.LightThemeForeColor;
             }
             else
             {
@@ -140,80 +132,48 @@ namespace interdisciplinar2
             showPasswordImage.Visible = true;
         }
 
-        private void SqlInjectionPrevention()
-        {
-            if (txtbName.Text.Contains("'"))
-                txtbPassword.Text = txtbPassword.Text.Replace("'", "");
-
-            if (txtbPassword.Text.Contains("'"))
-                txtbPassword.Text = txtbPassword.Text.Replace("'", "");
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MySqlConnection mysql = new MySqlConnection("server=localhost;database=db_barbearia;uid=root;pwd=etec");
+            this.Cursor = Cursors.WaitCursor;
+
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+                bool isAuthenticate = login.AuthenticateUser(txtbName.Text, txtbPassword.Text);
 
-                mysql.Open();
-
-                MySqlDataReader reader = null;
-
-                using (MySqlCommand command = new MySqlCommand("SELECT nome_barbeiro, senha_barbeiro FROM tb_barbeiro", mysql))
+                switch (isAuthenticate)
                 {
-                    reader = command.ExecuteReader();
+                    case true:
+                        DoneMessageBox dMessageBox = new DoneMessageBox("Login efetuado com sucesso!");
+                        dMessageBox.ShowDialog();
 
-                    while (reader.Read())
-                    {
-                        string user = reader.GetString("nome_barbeiro");
+                        this.Hide();
+                        MainScreen mainScreen = new MainScreen();
+                        mainScreen.Show();
+                        break;
 
-                        string password = reader.GetString("senha_barbeiro");
+                    case false:
+                        txtbName.Text = "Digite seu Usuário";
+                        txtbName.ForeColor = Color.Gray;
 
-                        SqlInjectionPrevention();
+                        txtbPassword.Text = "Digite a Senha";
+                        txtbPassword.ForeColor = Color.Gray;
+                        txtbPassword.UseSystemPasswordChar = false;
 
-                        if (txtbName.Text == user && txtbPassword.Text == password)
-                        {
-                            DoneMessageBox dMessageBox = new DoneMessageBox("Login efetuado com sucesso!");
-                            dMessageBox.ShowDialog();
-
-                            this.Hide();
-                            MainScreen mainScreen = new MainScreen();
-                            mainScreen.Show();
-                        }
-                        else
-                        {
-                            if (txtbName.Text != user)
-                            {
-                                lblInvalidUser.Visible = true;
-                                txtbName.Text = "";
-                            }
-
-                            if (txtbPassword.Text != password)
-                            {
-                                DefaultPasswordText();
-
-                                lblInvalidPassword.Visible = true;
-                                txtbPassword.Text = "";
-                            }
-                        }
-                    }
+                        throw new ArgumentException();
                 }
-                this.Cursor = Cursors.Default;
+            }
+            catch (ArgumentException)
+            {
+                ErrorMessageBox eMessageBox = new ErrorMessageBox("Usuário ou senha inválidos!");
+                eMessageBox.ShowDialog();
             }
             catch (Exception ex)
             {
                 ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
                 eMessageBox.ShowDialog();
             }
-            finally
-            {
-                if (mysql.State == ConnectionState.Open)
-                {
-                    mysql.Close();
-                }
-                mysql.Dispose();
-            }
+
+            this.Cursor = Cursors.Default;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -245,24 +205,24 @@ namespace interdisciplinar2
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-            if (ThemeController.GetTheme() == "light")
+            if (ProgramTheme.GetTheme() == "light")
             {
-                this.BackColor = ThemeController.LightThemeBackColor;
+                this.BackColor = ProgramTheme.LightThemeBackColor;
 
-                btnLogin.BackColor = ThemeController.LightThemeBtnBackColor;
-                btnLogin.ForeColor = ThemeController.LightThemeForeColor;
+                btnLogin.BackColor = ProgramTheme.LightThemeBtnBackColor;
+                btnLogin.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                label1.ForeColor = ThemeController.LightThemeForeColor;
-                label2.ForeColor = ThemeController.LightThemeForeColor;
-                label3.ForeColor = ThemeController.LightThemeForeColor;
+                label1.ForeColor = ProgramTheme.LightThemeForeColor;
+                label2.ForeColor = ProgramTheme.LightThemeForeColor;
+                label3.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                panel1.BackColor = ThemeController.LightThemeForeColor;
-                panel2.BackColor = ThemeController.LightThemeForeColor;
+                panel1.BackColor = ProgramTheme.LightThemeForeColor;
+                panel2.BackColor = ProgramTheme.LightThemeForeColor;
 
-                txtbName.BackColor = ThemeController.LightThemeBackColor;
-                txtbName.ForeColor = ThemeController.LightThemeForeColor;
-                txtbPassword.BackColor = ThemeController.LightThemeBackColor;
-                txtbPassword.ForeColor = ThemeController.LightThemeForeColor;
+                txtbName.BackColor = ProgramTheme.LightThemeBackColor;
+                txtbName.ForeColor = ProgramTheme.LightThemeForeColor;
+                txtbPassword.BackColor = ProgramTheme.LightThemeBackColor;
+                txtbPassword.ForeColor = ProgramTheme.LightThemeForeColor;
 
                 pictureBox2.Image = Properties.Resources.dark_human_icon;
                 pictureBox3.Image = Properties.Resources.dark_lock_solid;
