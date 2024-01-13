@@ -1,18 +1,18 @@
-﻿using interdisciplinar2.CustomMessageBoxes;
+﻿using FontAwesome.Sharp;
+using interdisciplinar2.CustomMessageBoxes;
 using interdisciplinar2.Models;
-using MySql.Data.MySqlClient;
 using System;
-using System.Data;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace interdisciplinar2
 {
     public partial class LoginScreen : Form
     {
-        private Login login;
+        private readonly Login login;
+        private ProgramTheme programTheme;
 
         public LoginScreen()
         {
@@ -21,6 +21,30 @@ namespace interdisciplinar2
             dontShowPasswordImage.Visible = false;
 
             login = new Login();
+
+            List<Label> labels = new List<Label>();
+            {
+                labels.Add(label1);
+                labels.Add(label2);
+                labels.Add(label3);
+            }
+
+            List<Button> buttons = new List<Button>();
+            buttons.Add(btnLogin);
+
+            List<TextBox> txtBoxes = new List<TextBox>();
+            txtBoxes.Add(txtbName);
+            txtBoxes.Add(txtbPassword);
+
+            programTheme = new ProgramTheme();
+            {
+                programTheme.form = this;
+                programTheme.labels = labels;
+                programTheme.buttons = buttons;
+                programTheme.txtBoxes = txtBoxes;
+            }
+
+            programTheme.LoadTheme();
         }
 
         private void DefaultNameText()
@@ -37,6 +61,9 @@ namespace interdisciplinar2
             {
                 txtbPassword.Clear();
                 txtbPassword.UseSystemPasswordChar = true;
+
+                dontShowPasswordImage.Visible = false;
+                showPasswordImage.Visible = true;
             }
         }
 
@@ -77,7 +104,7 @@ namespace interdisciplinar2
 
         private void lblClose_MouseClick(object sender, MouseEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void txtbName_MouseClick(object sender, MouseEventArgs e)
@@ -205,29 +232,22 @@ namespace interdisciplinar2
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
+            programTheme.LoadTheme();
+
             if (ProgramTheme.GetTheme() == "light")
             {
-                this.BackColor = ProgramTheme.LightThemeBackColor;
-
-                btnLogin.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                btnLogin.ForeColor = ProgramTheme.LightThemeForeColor;
-
-                label1.ForeColor = ProgramTheme.LightThemeForeColor;
-                label2.ForeColor = ProgramTheme.LightThemeForeColor;
-                label3.ForeColor = ProgramTheme.LightThemeForeColor;
-
                 panel1.BackColor = ProgramTheme.LightThemeForeColor;
                 panel2.BackColor = ProgramTheme.LightThemeForeColor;
-
-                txtbName.BackColor = ProgramTheme.LightThemeBackColor;
-                txtbName.ForeColor = ProgramTheme.LightThemeForeColor;
-                txtbPassword.BackColor = ProgramTheme.LightThemeBackColor;
-                txtbPassword.ForeColor = ProgramTheme.LightThemeForeColor;
 
                 pictureBox2.Image = Properties.Resources.dark_human_icon;
                 pictureBox3.Image = Properties.Resources.dark_lock_solid;
                 dontShowPasswordImage.Image = Properties.Resources.dark_dont_show_password_icon_removebg_preview;
                 showPasswordImage.Image = Properties.Resources.dark_show_password_icon_removebg_preview;
+            }
+            else
+            {
+                panel1.BackColor = ProgramTheme.DarkThemeForeColor;
+                panel2.BackColor = ProgramTheme.DarkThemeForeColor;
             }
         }
     }

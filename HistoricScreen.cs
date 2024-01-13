@@ -2,6 +2,7 @@
 using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -9,23 +10,29 @@ namespace interdisciplinar2
 {
     public partial class HistoricScreen : Form
     {
+        private ProgramTheme programTheme;
+
         public HistoricScreen()
         {
             InitializeComponent();
+
+            List<Label> labels = new List<Label>();
+            labels.Add(tituloSelecionado);
+
+            programTheme = new ProgramTheme();
+            programTheme.form = this;
+            programTheme.labels = labels;
+            programTheme.LoadTheme();
         }
 
         private void HistoricScreen_Load(object sender, EventArgs e)
         {
-            carregarBanco();
+            programTheme.LoadTheme();
 
-            if (ProgramTheme.GetTheme() == "light")
-            {
-                this.BackColor = ProgramTheme.LightThemeBackColor;
-                tituloSelecionado.ForeColor = ProgramTheme.LightThemeForeColor;
-            }
+            LoadData();
         }
 
-        private void carregarBanco()
+        private void LoadData()
         {
             string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
             MySqlConnection conexaoMysql = new MySqlConnection(conexao);

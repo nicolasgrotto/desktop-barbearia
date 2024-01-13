@@ -1,7 +1,9 @@
-﻿using interdisciplinar2.CustomMessageBoxes;
+﻿using FontAwesome.Sharp;
+using interdisciplinar2.CustomMessageBoxes;
 using interdisciplinar2.Models;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,9 +12,29 @@ namespace interdisciplinar2
 {
     public partial class AgendamentosScreen : Form
     {
+        private ProgramTheme programTheme;
         public AgendamentosScreen()
         {
             InitializeComponent();
+
+            List<Button> buttons = new List<Button>();
+            buttons.Add(btnCadastrar);
+
+            List<Label> labels = new List<Label>();
+            labels.Add(label1);
+            labels.Add(label2);
+            labels.Add(label3);
+            labels.Add(label4);
+
+            List<IconButton> iconButtons = new List<IconButton>();
+            iconButtons.Add(ibSearch);
+
+            programTheme = new ProgramTheme();
+            programTheme.form = this;
+            programTheme.buttons = buttons;
+            programTheme.labels = labels;
+            programTheme.iButtons = iconButtons;
+            programTheme.LoadTheme();
         }
 
         private void LoadDatabaseData()
@@ -108,19 +130,7 @@ namespace interdisciplinar2
 
         private void AgendamentosScreen_Load(object sender, EventArgs e)
         {
-            if (ProgramTheme.GetTheme() == "light")
-            {
-                ibSearch.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                ibSearch.IconColor = ProgramTheme.LightThemeForeColor;
-
-                label1.ForeColor = ProgramTheme.LightThemeForeColor;
-                label2.ForeColor = ProgramTheme.LightThemeForeColor;
-                label3.ForeColor = ProgramTheme.LightThemeForeColor;
-                label4.ForeColor = ProgramTheme.LightThemeForeColor;
-
-                btnCadastrar.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                btnCadastrar.ForeColor = ProgramTheme.LightThemeForeColor;
-            }
+            programTheme.LoadTheme();
 
             LoadDatabaseData();
         }

@@ -305,7 +305,6 @@
     <None Include="Resources\barber-logo-no-bg-removebg-preview-transformed.png" />
     <None Include="Resources\sorte.png" />
     <None Include="Resources\Marca do bruno com alterações .png" />
-    <Content Include="ThemeFile\Theme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

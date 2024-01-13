@@ -1,6 +1,7 @@
-﻿using interdisciplinar2.CustomMessageBoxes;
+﻿using FontAwesome.Sharp;
 using interdisciplinar2.Models;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace interdisciplinar2
     public partial class DashboardScreen : Form
     {
         private Dashboard dashboard;
+        private ProgramTheme programTheme;
 
         public DashboardScreen()
         {
@@ -20,6 +22,38 @@ namespace interdisciplinar2
 
             dashboard = new Dashboard();
             LoadFormData();
+
+            List<Button> btns = new List<Button>();
+            btns.Add(btnLast30Days);
+            btns.Add(btnLast7Days);
+            btns.Add(btnToday);
+            btns.Add(btnCustom);
+            btns.Add(btnOk);
+
+            List<Label> lbls = new List<Label>();
+            lbls.Add(lblTotalSchedules);
+            lbls.Add(lblTotalRevenue);
+            lbls.Add(lblName);
+
+            List<Panel> pnls = new List<Panel>();
+            pnls.Add(pnlTotalSchedules);
+            pnls.Add(panel1);
+            pnls.Add(panel2);
+
+            List<IconPictureBox> ipBoxes = new List<IconPictureBox>();
+            ipBoxes.Add(iconPictureBox1);
+            ipBoxes.Add(iconPictureBox2);
+            ipBoxes.Add(iconPictureBox3);
+
+            programTheme = new ProgramTheme();
+
+            programTheme.form = this;
+            programTheme.buttons = btns;
+            programTheme.labels = lbls;
+            programTheme.panels = pnls;
+            programTheme.chart = chart;
+            programTheme.iPictureBoxes = ipBoxes;
+            programTheme.LoadTheme();
         }
 
         private void LoadFormData()
@@ -35,7 +69,7 @@ namespace interdisciplinar2
                 chart.DataSource = dashboard.RevenueByDateList;
                 chart.Series[0].XValueMember = "Date";
                 chart.Series[0].YValueMembers = "totalAmount";
-                chart.DataBind();              
+                chart.DataBind();
             }
         }
 
@@ -178,45 +212,47 @@ namespace interdisciplinar2
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            if (ProgramTheme.GetTheme() == "light")
-            {
-                pnlTotalSchedules.BackColor = ProgramTheme.LightThemeItemBackColor;
-                panel1.BackColor = ProgramTheme.LightThemeItemBackColor;
-                panel2.BackColor = ProgramTheme.LightThemeItemBackColor;
+            //if (ProgramTheme.GetTheme() == "light")
+            //{
+            //    pnlTotalSchedules.BackColor = ProgramTheme.LightThemeItemBackColor;
+            //    panel1.BackColor = ProgramTheme.LightThemeItemBackColor;
+            //    panel2.BackColor = ProgramTheme.LightThemeItemBackColor;
 
-                chart.BackColor = ProgramTheme.LightThemeItemBackColor;
-                chart.Legends[0].BackColor = ProgramTheme.LightThemeItemBackColor;
-                chart.Legends[0].ForeColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].AxisX.MajorGrid.LineColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].AxisY.MajorGrid.LineColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].AxisY.LineColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].AxisX.LineColor = ProgramTheme.LightThemeForeColor;
-                chart.ChartAreas[0].BackColor = ProgramTheme.LightThemeBackColor;
+            //    chart.BackColor = ProgramTheme.LightThemeItemBackColor;
+            //    chart.Legends[0].BackColor = ProgramTheme.LightThemeItemBackColor;
+            //    chart.Legends[0].ForeColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].AxisX.MajorGrid.LineColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].AxisY.MajorGrid.LineColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].AxisY.LineColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].AxisX.LineColor = ProgramTheme.LightThemeForeColor;
+            //    chart.ChartAreas[0].BackColor = ProgramTheme.LightThemeBackColor;
 
-                lblTotalSchedules.ForeColor = ProgramTheme.LightThemeForeColor;
-                lblTotalRevenue.ForeColor = ProgramTheme.LightThemeForeColor;
-                lblName.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    lblTotalSchedules.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    lblTotalRevenue.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    lblName.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                btnToday.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                btnLast7Days.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                btnLast30Days.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                btnCustom.BackColor = ProgramTheme.LightThemeBtnBackColor;
-                btnOk.BackColor = ProgramTheme.LightThemeBtnBackColor;
+            //    btnToday.BackColor = ProgramTheme.LightThemeBtnBackColor;
+            //    btnLast7Days.BackColor = ProgramTheme.LightThemeBtnBackColor;
+            //    btnLast30Days.BackColor = ProgramTheme.LightThemeBtnBackColor;
+            //    btnCustom.BackColor = ProgramTheme.LightThemeBtnBackColor;
+            //    btnOk.BackColor = ProgramTheme.LightThemeBtnBackColor;
 
-                btnToday.ForeColor = ProgramTheme.LightThemeForeColor;
-                btnLast7Days.ForeColor = ProgramTheme.LightThemeForeColor;
-                btnLast30Days.ForeColor = ProgramTheme.LightThemeForeColor;
-                btnCustom.ForeColor = ProgramTheme.LightThemeForeColor;
-                btnOk.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    btnToday.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    btnLast7Days.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    btnLast30Days.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    btnCustom.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    btnOk.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                label1.ForeColor = ProgramTheme.LightThemeForeColor;
+            //    label1.ForeColor = ProgramTheme.LightThemeForeColor;
 
-                iconPictureBox1.IconColor = Color.Black;
-                iconPictureBox2.IconColor = Color.Black;
-                iconPictureBox3.IconColor = Color.Black;
-            }
+            //    iconPictureBox1.IconColor = Color.Black;
+            //    iconPictureBox2.IconColor = Color.Black;
+            //    iconPictureBox3.IconColor = Color.Black;
+            //}
+
+            programTheme.LoadTheme();
         }
     }
 }

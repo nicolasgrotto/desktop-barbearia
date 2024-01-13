@@ -1,5 +1,6 @@
 ﻿using interdisciplinar2.Models;
 using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -66,14 +67,25 @@ namespace interdisciplinar2
 
         private void SplashScreen_Load(object sender, EventArgs e)
         {
-            if (ProgramTheme.GetTheme() == "light")
+            switch (ProgramTheme.GetTheme())
             {
-                this.BackColor = ProgramTheme.LightThemeBackColor;
-                label1.ForeColor = ProgramTheme.LightThemeForeColor;
+                case "dark":
+                    this.BackColor = Color.FromArgb(53, 59, 72);
+                    label1.ForeColor = ProgramTheme.DarkThemeForeColor;
 
-                progressBar.BackColor = ProgramTheme.LightThemeBackColor;
-                progressBar.InnerColor = ProgramTheme.LightThemeBackColor;
-                progressBar.ForeColor = ProgramTheme.LightThemeForeColor;
+                    progressBar.BackColor = Color.FromArgb(53, 59, 72);
+                    progressBar.InnerColor = Color.FromArgb(53, 59, 72);
+                    progressBar.ForeColor = ProgramTheme.DarkThemeForeColor;
+                    break;
+
+                case "light":
+                    this.BackColor = ProgramTheme.LightThemeBackColor;
+                    label1.ForeColor = ProgramTheme.LightThemeForeColor;
+
+                    progressBar.BackColor = ProgramTheme.LightThemeBackColor;
+                    progressBar.InnerColor = ProgramTheme.LightThemeBackColor;
+                    progressBar.ForeColor = ProgramTheme.LightThemeForeColor;
+                    break;
             }
         }
     }

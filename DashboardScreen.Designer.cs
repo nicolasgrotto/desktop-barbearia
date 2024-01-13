@@ -183,7 +183,7 @@
             // 
             // iconPictureBox2
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlLightLight;
@@ -230,7 +230,7 @@
             // 
             // iconPictureBox3
             // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlLightLight;
@@ -277,7 +277,7 @@
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlLightLight;

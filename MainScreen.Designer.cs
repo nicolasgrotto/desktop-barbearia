@@ -393,6 +393,7 @@
             this.clock1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clock1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.clock1.BeforeTouchSize = new System.Drawing.Size(336, 336);
+            this.clock1.BorderColor = System.Drawing.Color.White;
             this.clock1.ClockFormat = "HH:mm:ss";
             this.clock1.ClockFrame = Syncfusion.Windows.Forms.Tools.ClockFrames.RectangularFrame;
             this.clock1.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Circle;

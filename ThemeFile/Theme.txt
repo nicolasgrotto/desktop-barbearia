@@ -1,2 +1,0 @@
-**NÃO ALTERE AS PROPRIEDADES DESSE ARQUIVO**
-theme = dark

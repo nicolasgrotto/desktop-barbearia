@@ -25,8 +25,16 @@ namespace interdisciplinar2
         {
             InitializeComponent();
 
-            if (ProgramTheme.GetTheme() == "dark")
-                toggleButton1.ToggleState = ToggleButtonState.Active;
+            switch (ProgramTheme.GetTheme())
+            {
+                case "dark":
+                    toggleButton1.ToggleState = ToggleButtonState.Active;
+                    break;
+
+                case "light":
+                    toggleButton1.ToggleState = ToggleButtonState.Inactive;
+                    break;
+            }
 
             this.DoubleBuffered = true;
         }
@@ -307,10 +315,12 @@ namespace interdisciplinar2
             {
                 case "light":
                     panelMainForms.BackColor = ProgramTheme.LightThemeBackColor;
+                    clock1.BorderColor = Color.Black;
                     break;
 
                 case "dark":
                     panelMainForms.BackColor = ProgramTheme.DarkThemeBackColor;
+                    clock1.BorderColor = Color.White;
                     break;
             }
         }
