@@ -11,6 +11,7 @@ namespace interdisciplinar2
     public partial class HistoricScreen : Form
     {
         private ProgramTheme programTheme;
+        private Schedule schedule;
 
         public HistoricScreen()
         {
@@ -22,7 +23,8 @@ namespace interdisciplinar2
             programTheme = new ProgramTheme();
             programTheme.form = this;
             programTheme.labels = labels;
-            programTheme.LoadTheme();
+
+            schedule = new Schedule();
         }
 
         private void HistoricScreen_Load(object sender, EventArgs e)
@@ -34,118 +36,49 @@ namespace interdisciplinar2
 
         private void LoadData()
         {
-            string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
-            MySqlConnection conexaoMysql = new MySqlConnection(conexao);
             try
             {
-                conexaoMysql.Open();
+                schedule.StartDate = DateTime.Now;
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < now()-1 ORDER BY datahora DESC", conexaoMysql);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvHistorico.DataSource = dt;
-
-                DoneMessageBox dMessageBox = new DoneMessageBox("Histórico carregado com sucesso!");
-                dMessageBox.ShowDialog();
+                schedule.GetAllPastSchedules(dgvHistorico);
             }
             catch (Exception ex)
             {
                 ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
                 eMessageBox.ShowDialog();
             }
-            finally
-            {
-                if (conexaoMysql.State == ConnectionState.Open)
-                {
-                    conexaoMysql.Close();
-                }
-                conexaoMysql.Dispose();
-            }
         }
 
         private void cbHistorico_SelectedIndexChanged(object sender, EventArgs e)
         {
             tituloSelecionado.Text = cbHistorico.Text;
-            if (cbHistorico.SelectedIndex == 0)
-            {
-                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
-                MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-                try
-                {
-                    conexaoMysql.Open();
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(" select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where WEEK (datahora) = WEEK( current_date ) - 1 AND YEAR( datahora) = YEAR( current_date ) ORDER BY datahora DESC;", conexaoMysql);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    dgvHistorico.DataSource = dt;
-                }
-                catch (Exception ex)
+            try
+            {
+                switch (cbHistorico.SelectedIndex)
                 {
-                    ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
-                    eMessageBox.ShowDialog();
-                }
-                finally
-                {
-                    if (conexaoMysql.State == ConnectionState.Open)
-                    {
-                        conexaoMysql.Close();
-                    }
-                    conexaoMysql.Dispose();
+                    case 0:
+                        schedule.StartDate = DateTime.Now.AddDays(-7);
+                        schedule.EndDate = DateTime.Now;
+                        schedule.GetPastSchedulesByDate(dgvHistorico);
+                        break;
+
+                    case 1:
+                        schedule.StartDate = DateTime.Now.AddMonths(-1);
+                        schedule.EndDate = DateTime.Now;
+                        schedule.GetPastSchedulesByDate(dgvHistorico);
+                        break;
+
+                    case 2:
+                        schedule.StartDate = DateTime.Now;
+                        schedule.GetAllPastSchedules(dgvHistorico);
+                        break;
                 }
             }
-            else if (cbHistorico.SelectedIndex == 1)
+            catch (Exception ex)
             {
-                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
-                MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-                try
-                {
-                    conexaoMysql.Open();
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where month(datahora) = month(curdate() - interval 1 month) and year(datahora) = year(curdate() - interval 1 month) ORDER BY datahora DESC;", conexaoMysql);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    dgvHistorico.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
-                    eMessageBox.ShowDialog();
-                }
-                finally
-                {
-                    if (conexaoMysql.State == ConnectionState.Open)
-                    {
-                        conexaoMysql.Close();
-                    }
-                    conexaoMysql.Dispose();
-                }
-            }
-            else if (cbHistorico.SelectedIndex == 2)
-            {
-                string conexao = "server=localhost;database=db_barbearia;uid=root;pwd=etec";
-                MySqlConnection conexaoMysql = new MySqlConnection(conexao);
-                try
-                {
-                    conexaoMysql.Open();
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter("select tb_clientes.id_cliente,cortes,datahora from tb_agendamentos inner join tb_clientes on tb_clientes.id_cliente=tb_agendamentos.id_cliente where datahora < current_date() ORDER BY datahora DESC; ", conexaoMysql);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    dgvHistorico.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
-                    eMessageBox.ShowDialog();
-                }
-                finally
-                {
-                    if (conexaoMysql.State == ConnectionState.Open)
-                    {
-                        conexaoMysql.Close();
-                    }
-                    conexaoMysql.Dispose();
-                }
+                ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
+                eMessageBox.ShowDialog();
             }
         }
     }

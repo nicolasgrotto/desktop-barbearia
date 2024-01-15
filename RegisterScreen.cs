@@ -13,6 +13,7 @@ namespace interdisciplinar2
     public partial class AgendamentosScreen : Form
     {
         private ProgramTheme programTheme;
+
         public AgendamentosScreen()
         {
             InitializeComponent();
@@ -34,7 +35,6 @@ namespace interdisciplinar2
             programTheme.buttons = buttons;
             programTheme.labels = labels;
             programTheme.iButtons = iconButtons;
-            programTheme.LoadTheme();
         }
 
         private void LoadDatabaseData()

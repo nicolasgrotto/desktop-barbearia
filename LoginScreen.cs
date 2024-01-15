@@ -1,5 +1,4 @@
-﻿using FontAwesome.Sharp;
-using interdisciplinar2.CustomMessageBoxes;
+﻿using interdisciplinar2.CustomMessageBoxes;
 using interdisciplinar2.Models;
 using System;
 using System.Collections.Generic;
@@ -43,8 +42,6 @@ namespace interdisciplinar2
                 programTheme.buttons = buttons;
                 programTheme.txtBoxes = txtBoxes;
             }
-
-            programTheme.LoadTheme();
         }
 
         private void DefaultNameText()

@@ -28,7 +28,6 @@ namespace interdisciplinar2
             programTheme.form = this;
             programTheme.labels = labels;
             programTheme.buttons = buttons;
-            programTheme.LoadTheme();
         }
 
         private void AlterarSenhaScreen_Load(object sender, EventArgs e)
@@ -66,7 +65,7 @@ namespace interdisciplinar2
 
                 MySqlDataReader reader = null;
 
-                string typedActualPassword = txtbPassword.Text;
+                string typedPassword = txtbPassword.Text;
                 string confirmPassword = txtbConfirmPassword.Text;
                 string newPassword = txtbNewPassword.Text;
 
@@ -78,11 +77,11 @@ namespace interdisciplinar2
 
                     while (reader.Read())
                     {
-                        string actualPassword = reader.GetString("senha_barbeiro");
+                        string dbPassword = reader.GetString("senha_barbeiro");
 
-                        if (typedActualPassword == actualPassword)
+                        if (typedPassword == dbPassword)
                         {
-                            if (typedActualPassword == confirmPassword)
+                            if (typedPassword == confirmPassword)
                             {
                                 isPasswordValid = true;
                             }
@@ -103,8 +102,11 @@ namespace interdisciplinar2
 
                     if (isPasswordValid)
                     {
-                        using (MySqlCommand command2 = new MySqlCommand($"update tb_barbeiro set senha_barbeiro = '{newPassword}' where senha_barbeiro = '{typedActualPassword}';", mysql))
+                        using (MySqlCommand command2 = new MySqlCommand("update tb_barbeiro set senha_barbeiro = @NovaSenhaBarbeiro where senha_barbeiro = @SenhaBarbeiro;", mysql))
                         {
+                            command2.Parameters.AddWithValue("@NovaSenhaBarbeiro", newPassword);
+                            command2.Parameters.AddWithValue("@SenhaBarbeiro", typedPassword);
+
                             command2.ExecuteNonQuery();
 
                             DoneMessageBox dMessageBox = new DoneMessageBox("Senha alterada com sucesso!");

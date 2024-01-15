@@ -53,7 +53,6 @@ namespace interdisciplinar2
             programTheme.panels = pnls;
             programTheme.chart = chart;
             programTheme.iPictureBoxes = ipBoxes;
-            programTheme.LoadTheme();
         }
 
         private void LoadFormData()

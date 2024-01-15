@@ -18,7 +18,9 @@ namespace interdisciplinar2.Properties
     {
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+#pragma warning disable CS0649 // Campo "Settings.Theme" nunca é atribuído e sempre terá seu valor padrão null
         internal readonly string Theme;
+#pragma warning restore CS0649 // Campo "Settings.Theme" nunca é atribuído e sempre terá seu valor padrão null
 
         public static Settings Default
         {

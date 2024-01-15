@@ -68,7 +68,7 @@ namespace interdisciplinar2
             btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn.TextAlign = ContentAlignment.MiddleRight;
 
-            panelLeftBtn.Location = new System.Drawing.Point(0, btn.Location.Y);
+            panelLeftBtn.Location = new Point(0, btn.Location.Y);
             panelLeftBtn.Visible = true;
         }
 
@@ -335,22 +335,6 @@ namespace interdisciplinar2
             {
                 if (toggleButton1.ToggleState != ToggleButtonState.Active)
                 {
-                    try
-                    {
-                        if (CurrentChildForm != null)
-                        {
-                            CurrentChildForm.BackColor = ProgramTheme.LightThemeBackColor;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
-                        eMessageBox.ShowDialog();
-
-                        toggleButton1.ToggleState = ToggleButtonState.Active;
-                        return;
-                    }
-
                     ProgramTheme.SetTheme("light");
 
                     panelMainForms.BackColor = Color.White;
@@ -359,22 +343,6 @@ namespace interdisciplinar2
                 }
                 else if (toggleButton1.ToggleState != ToggleButtonState.Inactive)
                 {
-                    try
-                    {
-                        if (CurrentChildForm != null)
-                        {
-                            CurrentChildForm.BackColor = ProgramTheme.DarkThemeBackColor;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        ErrorMessageBox eMessageBox = new ErrorMessageBox(ex.Message);
-                        eMessageBox.ShowDialog();
-
-                        toggleButton1.ToggleState = ToggleButtonState.Inactive;
-                        return;
-                    }
-
                     ProgramTheme.SetTheme("dark");
 
                     panelMainForms.BackColor = ProgramTheme.DarkThemeBackColor;

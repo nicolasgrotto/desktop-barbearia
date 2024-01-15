@@ -164,6 +164,7 @@
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\DbConnection.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="RegisterScreen.cs">
       <SubType>Form</SubType>
     </Compile>
