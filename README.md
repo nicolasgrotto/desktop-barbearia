@@ -1,8 +1,10 @@
-# Sistema Desktop para barbearia
+# Sistema Desktop para barbearia                                  
+
+**Este sistema não foi produzido para fins comerciais**
 
 ## Descrição
 
-Este sistema foi criado originalmente no meu curso, feito para ser usado por barbearias, num banco de dados onde há o barbeiro, os agendamentos e os clientes. **Este sistema é especificamente feito para o barbeiro**
+Este sistema foi criado originalmente no meu curso, feito para ser usado por barbearias, num banco de dados onde há o barbeiro, os agendamentos e os clientes. **Este sistema é especificamente feito para o barbeiro**.
 
 ## Tecnologias utilizadas
 
